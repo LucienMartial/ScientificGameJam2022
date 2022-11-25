@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const playGameButton = document.getElementById("startGame");
 
     playGameButton.onclick = function() {
-        startGame();
+        start_game();
         set_exclusive_div_visible(EXCL_DIVS.GAME);
     }
 
@@ -40,11 +40,4 @@ function set_exclusive_div_visible(divToSet) {
             div.style.display = "none";
         }
     }
-}
-
-
-/** GAME **/
-
-function startGame() {
-    console.log("Starting game");
 }
