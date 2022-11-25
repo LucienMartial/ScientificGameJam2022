@@ -30,6 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
     menuButton.onclick = function() {
         set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
+
+    /** DARK MODE **/
+    const darkModeButton = document.getElementById("toggleDark");
+    const sunIcon = "assets/sun-solid.svg";
+    const moonIcon = "assets/moon-solid.svg";
+    let darkMode = false;
+    darkModeButton.onclick = function() {
+        darkModeButton.style.backgroundImage = darkMode ? `url("${sunIcon}")` : `url("${moonIcon}")`;
+        darkMode = !darkMode;
+        document.body.classList.toggle("dark");
+    }
 });
 
 function set_exclusive_div_visible(divToSet) {
@@ -40,4 +51,11 @@ function set_exclusive_div_visible(divToSet) {
             div.style.display = "none";
         }
     }
+}
+
+
+/** GAME **/
+
+function startGame() {
+    console.log("Starting game");
 }
