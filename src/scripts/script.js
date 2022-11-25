@@ -1,15 +1,13 @@
 "use script";
 
 const EXCL_DIVS = {
-    MENU: "menuDiv",
-    GAME: "gameDiv"
+    MENU: "menu",
+    GAME: "game"
 }
 
 let exclusiveDivs = null;
 
-document.addEventListener("DOMContentLoaded", function(_e) {
-    console.error(e);
-    
+document.addEventListener("DOMContentLoaded", function() {
     exclusiveDivs = document.getElementsByClassName("exclusive");
 
     set_exclusive_div_visible(EXCL_DIVS.MENU);
