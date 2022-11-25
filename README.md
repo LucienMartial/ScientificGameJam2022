@@ -1,5 +1,7 @@
 # ScientificGameJam2022
 
+![Logo](src/assets/favicon.png)
+
 "Bonnet" group from the scientific game jam in belfort making a video game on the issues of the Careli association.
 
 ## Contributors
