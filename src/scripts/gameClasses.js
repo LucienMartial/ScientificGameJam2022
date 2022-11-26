@@ -7,46 +7,54 @@ const ACTOR_TYPE = {
     RESEARCHER: "researcher"
 }
 
-const ANIMAL_TYPE = {
+const ENVIRONMENT = {
     VOLE: "vole",
     FOX: "fox",
-    HARE: "hare"
-}
-
-const ENVIRONMENT = {
-    HARVEST: "harvest"
+    HARE: "hare",
+    HAY: "hay"
 }
 
 class Game {
     constructor(cards) {
         this.date = 0;
-        this.animals = {};
-        this.animals[ANIMAL_TYPE.VOLE] = 0;
-        this.animals[ANIMAL_TYPE.FOX] = 0;
-        this.animals[ANIMAL_TYPE.HARE] = 0;
+
         this.environment = {};
-        this.environment[ENVIRONMENT.HARVEST] = 0;
+        this.environment[ENVIRONMENT.VOLE] = 0;
+        this.environment[ENVIRONMENT.FOX] = 0;
+        this.environment[ENVIRONMENT.HARE] = 0;
+        this.environment[ENVIRONMENT.HAY] = 0;
+
         this.cards = cards;
         this.pickedCard = null;
         this.lastReport = null;
     }
 
     pick_new_card() {
-        let randomIndex = Math.floor(Math.random() * this.cards.length);
+        let randomIndex = null;
 
-        while (this.cards[randomIndex].used === true) {
+        do {
             randomIndex = Math.floor(Math.random() * this.cards.length);
-        }
+        } while (this.cards[randomIndex] === true);
 
         this.pickedCard = this.cards[randomIndex];
         this.cards[randomIndex].used = true;
         this.date++;
     }
 
+    update_environment(vole, fox, hare, hay) {
+        this.environment[ENVIRONMENT.VOLE] += vole;
+        this.environment[ENVIRONMENT.FOX] += fox;
+        this.environment[ENVIRONMENT.HARE] += hare;
+        this.environment[ENVIRONMENT.HAY] += hay;
+    }
+
+    is_game_over() {
+        return this.gauge <= 0 || this.gauge >= 100 || this.date >= 30;
+    }
+
     get_report() {
         let report = {
             date: this.date,
-            animals: this.animals,
             environment: this.environment
         }
 
@@ -61,6 +69,10 @@ class Game {
     get_date() {
         return this.date;
     }
+
+    get_picked_card() {
+        return this.pickedCard;
+    }
 }
 
 class Actor {
@@ -71,5 +83,9 @@ class Actor {
 
     update_gauge(value) {
         this.gauge += value;
+    }
+
+    get_gauge() {
+        return this.gauge;
     }
 }
