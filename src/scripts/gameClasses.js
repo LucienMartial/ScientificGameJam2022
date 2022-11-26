@@ -2,79 +2,36 @@
 
 const ANIMAL_TYPE = {
     VOLE: "vole",
-    BOAR: "boar",
     FOX: "fox",
     HARE: "hare"
 }
 
-class Animal {
-    constructor(animalType, threshold, populationSize) {
-        this.animalType = animalType;
-        this.threshold = threshold;
-        this.populationSize = populationSize;
+class nature {
+    constructor() {
+        
     }
-};
+}
 
-class EcoElement {
-    constructor(quality, quantity) {
-        this.quality = quality;
-        this.quantity = quantity;
+class hunter {
+    constructor() {
+
     }
-};
+}
 
-class Environment {
-    constructor(vole, boar, fox, hare, harvest) {
-        this.vole = vole;
-        this.boar = boar;
-        this.fox = fox;
-        this.hare = hare;
-        this.harvest = harvest; // type : EcoElement
+class naturalist {
+    constructor() {
+
     }
-};
+}
 
-class Hunter {
-    constructor(opinion, hunt) {
-        this.opinion = opinion;
-        this.hunt = hunt;
+class farmer {
+    constructor() {
+
     }
-};
+}
 
-class Farmer {
-    constructor(opinion) {
-        this.opinion = opinion;
+class researcher {
+    constructor() {
+
     }
-};
-
-class Naturalist {
-    constructor(opinion) {
-        this.opinion = opinion;
-    }
-};
-
-class Researcher {
-    constructor(opinion) {
-        this.opinion = opinion;
-    }
-};
-
-class Card {
-    constructor(action, image) {
-        this.action = action;
-        this.image = image;
-    }
-};
-
-class Action {
-    constructor(description) {
-        this.description = description;
-    }
-    
-    execute() {
-        console.log(this.description); // TODO : what the action will do
-    }
-};
-
-
-
-
-
+}

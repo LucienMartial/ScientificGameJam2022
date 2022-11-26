@@ -1,0 +1,34 @@
+[
+    {
+        "name": "name0",
+        "description": "desc",
+        "actionAccept": {
+            "hunter": 0,
+            "naturalist": 0,
+            "farmer": 0,
+            "researcher": 0
+        },
+        "actionDeny": {
+            "hunter": 0,
+            "naturalist": 0,
+            "farmer": 0,
+            "researcher": 0
+        }
+    },
+    {
+        "name": "name1",
+        "description": "desc",
+        "actionAccept": {
+            "hunter": 0,
+            "naturalist": 0,
+            "farmer": 0,
+            "researcher": 0
+        },
+        "actionDeny": {
+            "hunter": 0,
+            "naturalist": 0,
+            "farmer": 0,
+            "researcher": 0
+        }
+    }
+]
