@@ -10,10 +10,27 @@ function start_game() {
 
 }
 
+let game = null;
+let actors = [];
 
 
+function init_classes() {
+    game = new Game();
+    actors.push(new Hunter());
+    actors.push(new Naturalist());
+    actors.push(new Farmer());
+    actors.push(new Researcher());
+}
 
 /** DISPLAY UPDATE **/
+
+function update_game_display() {
+    actor_gauge_display_update();
+    event_display_update();
+    action_display_update();
+    display_date();
+    display_last_report();
+}
 
 let hunterDiv = null;
 let naturalistDiv = null;
@@ -26,6 +43,7 @@ let actionsDiv = null;
 
 let optionsDiv = null;
 let currentDate = null;
+let lastReportBtn = null;
 let lastReportContent = null;
 
 function init_display_elements() {
@@ -40,33 +58,37 @@ function init_display_elements() {
 
     optionsDiv = document.getElementById("options");
     currentDate = document.getElementById("currentDate");
+    lastReportBtn = document.getElementById("lastReport");
     lastReportContent = document.getElementById("lastReportContent");
-}
 
-function actor_gauge_display_update() {
-    for (let actor of actors) {
-        actor.gauge_display_update();
+    lastReportBtn.onclick = function() {
+        lastReportContent.style.display = "block";
+        display_last_report();
     }
 }
 
-function event_display_update() {
-    eventsDiv.innerHTML = "";
-    for (let event of events) {
-        eventsDiv.appendChild(event.display());
-    }
+function display_actors() {
+
 }
 
-function action_display_update() {
-    actionsDiv.innerHTML = "";
-    for (let action of actions) {
-        actionsDiv.appendChild(action.display());
-    }
+function display_event() {
+
 }
 
-function display_last_report() {
-    lastReportContent.innerHTML = game.lastReport;
+function display_action() {
+
 }
 
 function display_date() {
     currentDate.innerHTML = "Date: " + game.date;
+}
+
+
+function display_last_report() {
+    lastReportContent.innerHTML = game.lastReport;
+    lastReportContent.style.display = "block";
+    
+    lastReportContent.onclick = function() {
+        lastReportContent.style.display = "none";
+    }
 }
