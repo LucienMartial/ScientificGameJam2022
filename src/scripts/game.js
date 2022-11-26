@@ -156,8 +156,8 @@ function resolve_choice(choice) {
             game.update_environment(pickedCard.choice2.vole, pickedCard.choice2.fox, pickedCard.choice2.hare, pickedCard.choice2.hay);
         }
     } else {
-        update_actors(pickedCard.hunter, pickedCard.naturalist, pickedCard.farmer, pickedCard.researcher);
-        game.update_environment(pickedCard.vole, pickedCard.fox, pickedCard.hare, pickedCard.hay);
+        update_actors(pickedCard.effect.hunter, pickedCard.effect.naturalist, pickedCard.effect.farmer, pickedCard.effect.researcher);
+        game.update_environment(pickedCard.effect.vole, pickedCard.effect.fox, pickedCard.effect.hare, pickedCard.effect.hay);
     }
 }
 

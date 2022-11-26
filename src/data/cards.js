@@ -25,7 +25,7 @@ const cards =[
             hay: 1
         },
         used: false,
-        event: true
+        event: false
     },
     {
         name: 1,
