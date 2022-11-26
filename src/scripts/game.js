@@ -145,8 +145,3 @@ function update_actors(hunterDiff, naturalistDiff, farmerDiff, researcherDiff) {
     farmer.update_gauge(farmerDiff);
     researcher.update_gauge(researcherDiff);
 }
-
-
-
-
-

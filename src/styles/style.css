@@ -178,13 +178,36 @@ body.dark #options button {
     border: solid #666666 1px;
 }
 
-.progress { 
-    height: 20px;
-    position: relative;
-    background: #333;
-    border-radius: 25px;
-    padding: 10px;
-    box-shadow:  0 0 10px rgba(255, 255, 255, 0.3);
-    width: 200px;
-    transform: rotate(270deg) scaleY(150%);
+.progressbar{
+    position:relative;
+    border:solid #333 1px;
+    width:10%;
+    height:300px;
+    border-radius:2rem;
+    overflow:hidden;
+    background:transparent;
+}
+
+.progressbar::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:20%;
+    background: #F00;
+    z-index:-1;
+}
+
+.actor{
+    height: 20%;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.actor img{
+    width: 80%;
+    height: 100%;
 }
