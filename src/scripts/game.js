@@ -1,6 +1,32 @@
 "use strict";
 
+let game = null;
+let hunter = null;
+let naturalist = null;
+let farmer = null;
+let researcher = null;
+
+let hunterDiv = null;
+let naturalistDiv = null;
+let farmerDiv = null;
+let researcherDiv = null;
+
+let cardContainer = null;
+
+let optionsDiv = null;
+let currentDate = null;
+let lastReportBtn = null;
+let lastReportContent = null;
+
+function reset_game() {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].used = false;
+    }
+}
+
 function start_game() {
+    reset_game();
+
     init_classes();
     init_display_elements();
 
@@ -8,12 +34,6 @@ function start_game() {
     update_game_display();
     play_round();
 }
-
-let game = null;
-let hunter = null;
-let naturalist = null;
-let farmer = null;
-let researcher = null;
 
 function init_classes() {
     game = new Game(cards);
@@ -30,18 +50,6 @@ function update_game_display() {
     display_card();
     display_date();
 }
-
-let hunterDiv = null;
-let naturalistDiv = null;
-let farmerDiv = null;
-let researcherDiv = null;
-
-let cardContainer = null;
-
-let optionsDiv = null;
-let currentDate = null;
-let lastReportBtn = null;
-let lastReportContent = null;
 
 function init_display_elements() {
     hunterDiv = document.getElementById("hunterProgress");

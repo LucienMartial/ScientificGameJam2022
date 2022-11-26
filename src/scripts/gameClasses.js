@@ -30,6 +30,11 @@ class Game {
     }
 
     pick_new_card() {
+        if (!this.unused_cards()) {
+            this.pickedCard = null;
+            return;
+        }
+
         let randomIndex = null;
 
         do {
