@@ -13,7 +13,8 @@
             "naturalist": 0,
             "farmer": 0,
             "researcher": 0
-        }
+        },
+        "used": false
     },
     {
         "name": "name1",
@@ -29,6 +30,7 @@
             "naturalist": 0,
             "farmer": 0,
             "researcher": 0
-        }
+        },
+        "used": false
     }
 ]

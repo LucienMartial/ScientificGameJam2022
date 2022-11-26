@@ -7,6 +7,9 @@ function start_game() {
     init_display_elements();
 }
 
+let cards = [];
+fetch('../data/cards.json').then((response) => response.json()).then((json) => cards = new Map(Object.entries(json)));
+
 let game = null;
 let hunter = null;
 let naturalist = null;
@@ -15,11 +18,13 @@ let researcher = null;
 
 
 function init_classes() {
-    game = new Game();
+    game = new Game(cards);
     hunter = new Actor(ACTOR_TYPE.HUNTER);
     naturalist = new Actor(ACTOR_TYPE.NATURALIST);
     farmer = new Actor(ACTOR_TYPE.FARMER);
     researcher = new Actor(ACTOR_TYPE.RESEARCHER);
+
+    console.log(game.cards);
 }
 
 /** DISPLAY UPDATE **/
@@ -87,10 +92,26 @@ function display_date() {
 
 
 function display_last_report() {
-    lastReportContent.innerHTML = game.lastReport;
+    lastReportContent.innerHTML = game.get_last_report();
     lastReportContent.style.display = "block";
     
     lastReportContent.onclick = function() {
         lastReportContent.style.display = "none";
     }
 }
+
+function play_game() {
+    let card = null;
+
+    for (let i = 0; i < 10; i++) {
+        card = game.pick_new_card();
+        update_game_display();
+    }
+
+    console.log(game.get_report());
+}
+
+
+
+
+

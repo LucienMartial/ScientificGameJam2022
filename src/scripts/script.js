@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     exclusiveDivs = document.getElementsByClassName("exclusive");
 
     set_exclusive_div_visible(EXCL_DIVS.MENU);
-
+    
 
     /** PLAY GAME **/
 
