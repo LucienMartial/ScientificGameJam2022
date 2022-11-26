@@ -150,6 +150,16 @@ h1, h2 {
         "next";
 }
 
+
+
+body{
+    background-image: url("../assets/background_meadow.png");
+    background-size: 50%;
+    background-width: 100%;
+    background-repeat : no-repeat;
+    background-position-x: 50%;
+    background-position-y: -19%;
+}
 body.dark .card {
     box-shadow: 0 0 50px #FFFA;
 }
@@ -324,4 +334,46 @@ body.dark #options button {
 #lastReportContent .reportDate {
     font-size: 2.5rem;
     font-weight: bold;
+}
+
+/*
+    h1
+ */
+h1{
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+/* start */
+
+
+.start-btn{
+    text-align: center;
+    display: inline-block;
+    margin:5px;
+    top: 50px;
+    width: 200px;
+    height: 75px;
+    position: relative;
+    left: 43%;
+    font-weight: bold;
+    padding: 10px 0 10px 10px ;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: 0 .2em gray;
+    cursor: pointer;
+
+}
+.start-btn:active {
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+}
+
+#menu{
+    height: 200px;
 }
