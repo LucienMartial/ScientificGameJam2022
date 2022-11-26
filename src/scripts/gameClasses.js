@@ -16,6 +16,7 @@ const ANIMAL_TYPE = {
 class Game {
     constructor() {
         this.date = 0;
+        this.animals = {};
         this.animals[ANIMAL_TYPE.VOLE] = 0;
         this.animals[ANIMAL_TYPE.FOX] = 0;
         this.animals[ANIMAL_TYPE.HARE] = 0;
