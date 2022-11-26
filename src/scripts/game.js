@@ -63,10 +63,10 @@ function init_display_elements() {
 }
 
 function display_actors() {
-    hunterDiv.innerHTML = hunter.get_gauge();
-    naturalistDiv.innerHTML = naturalist.get_gauge();
-    farmerDiv.innerHTML = farmer.get_gauge();
-    researcherDiv.innerHTML = researcher.get_gauge();
+    hunterDiv.style.height = hunter.get_gauge()+"%";
+    naturalistDiv.style.height = naturalist.get_gauge()+"%";
+    farmerDiv.style.height = farmer.get_gauge()+"%";
+    researcherDiv.style.height = researcher.get_gauge()+"%";
 }
 
 function display_card() {
