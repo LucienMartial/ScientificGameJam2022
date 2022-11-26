@@ -85,8 +85,10 @@ function create_card(description, choiceLeft, choiceRight, event) {
     } else {
         const cardNext = document.createElement("div");
         cardNext.classList.add("choice");
+        cardNext.classList.add("choice");
         cardNext.id = "nextCard";
-        cardNext.innerText = "Next";
+        cardNext.innerText = "D'accord";
+        card.classList.add("event");
         card.appendChild(cardNext);
     }
 

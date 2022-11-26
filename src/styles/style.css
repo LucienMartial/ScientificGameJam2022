@@ -17,10 +17,12 @@
     --card-title-background-color: #666;
     --card-description-color: #AAA;
     --card-scale-transition-duration: .2s;
-    --progress-bar-transition-duration:.2s;
-    --border-color:antiquewhite;
-    --border-radius-default:2rem;
-    --report-display-transition-duration:0s; /* Changed on first click in JS*/
+    --card-move-transition-duration: .3s;
+    --progress-bar-transition-duration: .2s;
+    --border-color: antiquewhite;
+    --border-radius-default: 2rem;
+    --report-display-transition-duration: 0s; /* Changed on first click in JS*/
+    --report-background-color: #ffc89b;
 }
 
 body.dark {
@@ -32,6 +34,7 @@ body {
     transition: background-color var(--dark-mode-transition-duration);
     background-color: var(--background-color);
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 header {
@@ -84,7 +87,7 @@ h1, h2 {
     background-size: contain;
 }
 
-.gameContainer{
+.gameContainer {
     display: grid;
     grid-template-areas:
         "hunter card card naturalist"
@@ -102,6 +105,23 @@ h1, h2 {
     justify-content: center;
     align-items: center;
     grid-area: card;
+    transition: transform var(--card-move-transition-duration);
+}
+
+#cardContainer.clickedLeft {
+    transform: translate(-50%, 200%) rotateZ(-90deg) rotateX(180deg) rotateY(180deg);
+}
+
+#cardContainer.clickedRight {
+    transform: translate(50%, 200%) rotateZ(90deg) rotateX(180deg) rotateY(-180deg);
+}
+
+#cardContainer.clickedCenter {
+    transform: translateY(200%) rotateX(180deg);
+}
+
+#cardContainer.startTransition {
+    transform: translate(0, -200%)
 }
 
 .card {
@@ -115,12 +135,23 @@ h1, h2 {
         "image image"
         "desc desc"
         "choiceLeft choiceRight";
+    grid-template-columns: repeat(2, 1fr);
     width: 75%;
     height: 100%;
+    user-select: none;
+}
+
+.card.event{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+        "image"
+        "image"
+        "desc"
+        "next";
 }
 
 body.dark .card {
-    box-shadow: 0 0 50px rgba(28, 103, 28,1);
+    box-shadow: 0 0 50px #FFFA;
 }
 
 .card:hover {
@@ -135,18 +166,17 @@ body.dark .card {
 }
 
 .choice {
-    align-items: center;
     align-self: center;
     text-align: center;
     height: 100%;
     width: 100%;
     color: var(--text-color);
+    border-top: solid var(--border-color) 1px;
     cursor: pointer;
     padding-top: 10px;
 }
 
 #choiceLeft {
-    border-top: solid var(--border-color) 1px;
     border-right: solid var(--border-color) 1px;
     grid-area: choiceLeft;
 }
@@ -261,24 +291,37 @@ body.dark #options button {
     object-fit: contain;
 }
 
-#currentDate{
+#currentDate {
     color: var(--text-color);
 }
 
-#lastReportContent{
+#lastReportContent {
     font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
     height: 50vh;
     width: 30%;
     position: absolute;
     top: 0;
     left: 50%;
-    background-color: #0F0;
-    transform: translate(-50%,-100%);
+    transform: translate(-50%, -100%);
     transition: transform .3s, left .3s, top .3s;
+    cursor: pointer;
+    border-radius: var(--border-radius-default);
+    padding: 1%;
+    background-color: var(--report-background-color);
 }
 
-#lastReportContent.active{
+#lastReportContent * {
+    font-family: inherit;
+}
+
+#lastReportContent.active {
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+}
+
+#lastReportContent .reportDate {
+    font-size: 2.5rem;
+    font-weight: bold;
 }

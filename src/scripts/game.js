@@ -101,8 +101,35 @@ function display_date() {
 
 
 function display_last_report() {
+    const report = game.get_last_report();
+    if (report === null) {
+        lastReportContent.innerHTML = "Aucun rapport n'a encore été effectué.";
+    } else {
 
-    lastReportContent.innerHTML = JSON.stringify(game.get_last_report());
+        lastReportContent.innerHTML = "";
+        const date = document.createElement("p");
+        date.classList.add("reportDate");
+        date.innerText = "Date: " + report.date;
+        lastReportContent.appendChild(date);
+
+        lastReportContent.appendChild(document.createElement("br"));
+
+        const vole = document.createElement("p");
+        vole.innerHTML = "Population de campagnol: " + report.environment["vole"];
+        lastReportContent.appendChild(vole);
+
+        const fox = document.createElement("p");
+        fox.innerHTML = "Population de renard: " + report.environment["fox"];
+        lastReportContent.appendChild(fox);
+
+        const hare = document.createElement("p");
+        hare.innerHTML = "Population de lièvre: " + report.environment["hare"];
+        lastReportContent.appendChild(hare);
+
+        const hay = document.createElement("p");
+        hay.innerHTML = "Quantité de foin: " + report.environment["hay"];
+        lastReportContent.appendChild(hay);
+    }
 
     lastReportContent.onclick = function () {
         lastReportContent.classList.remove("active");
@@ -121,37 +148,19 @@ function play_round() {
 
         choice1.onclick = function () {
             resolve_choice("choiceLeft");
-            if (!game.is_game_over()) {
-                game.pick_new_card();
-                update_game_display();
-                play_round();
-            } else {
-                end_game();
-            }
+            process_click_on_card("left");
         }
 
         choice2.onclick = function () {
             resolve_choice("choiceRight");
-            if (!game.is_game_over()) {
-                game.pick_new_card();
-                update_game_display();
-                play_round();
-            } else {
-                end_game();
-            }
+            process_click_on_card("right");
         }
     } else {
         const nextCard = document.getElementById("nextCard");
 
         nextCard.onclick = function () {
             resolve_choice();
-            if (!game.is_game_over()) {
-                game.pick_new_card();
-                update_game_display();
-                play_round();
-            } else {
-                end_game();
-            }
+            process_click_on_card("center");
         }
     }
 }
@@ -178,6 +187,35 @@ function update_actors(hunterDiff, naturalistDiff, farmerDiff, researcherDiff) {
     naturalist.update_gauge(naturalistDiff);
     farmer.update_gauge(farmerDiff);
     researcher.update_gauge(researcherDiff);
+}
+
+function process_click_on_card(side) {
+    if(side === "left") {
+        cardContainer.classList.add("clickedLeft");
+    }else if(side === "right") {
+        cardContainer.classList.add("clickedRight");
+    }else {
+        cardContainer.classList.add("clickedCenter");
+    }
+    setTimeout(function () {
+        document.documentElement.style.setProperty("--card-move-transition-duration", "0s");
+        cardContainer.classList.remove("clickedLeft");
+        cardContainer.classList.remove("clickedRight");
+        cardContainer.classList.remove("clickedCenter");
+        cardContainer.classList.add("startTransition");
+        if (!game.is_game_over()) {
+            game.pick_new_card();
+            update_game_display();
+            play_round();
+        } else {
+            end_game();
+        }
+        setTimeout(function () {
+            document.documentElement.style.setProperty("--card-move-transition-duration", "0.3s");
+            cardContainer.classList.remove("startTransition");
+
+        },300);
+    }, 300);
 }
 
 function end_game() {
