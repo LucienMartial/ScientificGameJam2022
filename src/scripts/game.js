@@ -3,16 +3,23 @@
 function start_game() {
     console.log("Starting game");
 
+    init_classes();
     init_display_elements();
-
-
 }
 
 let game = null;
+let hunter = null;
+let naturalist = null;
+let farmer = null;
+let researcher = null;
 
 
 function init_classes() {
     game = new Game();
+    hunter = new Actor(ACTOR_TYPE.HUNTER);
+    naturalist = new Actor(ACTOR_TYPE.NATURALIST);
+    farmer = new Actor(ACTOR_TYPE.FARMER);
+    researcher = new Actor(ACTOR_TYPE.RESEARCHER);
 }
 
 /** DISPLAY UPDATE **/
@@ -60,18 +67,22 @@ function init_display_elements() {
 }
 
 function display_actors() {
+    hunterDiv.innerHTML = hunter.gauge;
+    naturalistDiv.innerHTML = naturalist.gauge;
+    farmerDiv.innerHTML = farmer.gauge;
+    researcherDiv.innerHTML = researcher.gauge;
 }
 
 function display_event() {
-    eventsDiv.innerHTML = game.currentEvent.description;
+    eventsDiv.innerHTML = "";
 }
 
 function display_actions() {
-
+    // pick random card
 }
 
 function display_date() {
-    currentDate.innerHTML = "Date: " + game.date;
+    currentDate.innerHTML = "Date: " + nature.date;
 }
 
 
