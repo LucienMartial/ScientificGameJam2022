@@ -34,7 +34,7 @@ class Game {
 
         do {
             randomIndex = Math.floor(Math.random() * this.cards.length);
-        } while (this.cards[randomIndex] === true);
+        } while (this.cards[randomIndex] === true || this.cards[randomIndex].used === true);
 
         this.pickedCard = this.cards[randomIndex];
         this.cards[randomIndex].used = true;
@@ -42,7 +42,6 @@ class Game {
     }
 
     unused_cards() {
-        console.log(this.cards);
         for (let i = 0; i < this.cards.length; i++) {
             if (this.cards[i].used === false) {
                 return true;
