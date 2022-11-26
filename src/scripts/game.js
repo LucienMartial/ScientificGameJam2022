@@ -27,6 +27,17 @@ function reset_game() {
 function start_game() {
     reset_game();
 
+    const gameContext = document.getElementById("gameContext");
+    gameContext.style.display = "block";
+
+    // gameContext.onclick = function () {
+    //     gameContext.style.display = "none";
+    // }
+
+    gameContext.onclick = function () {
+        gameContext.style.display = "none";
+    }
+
     init_classes();
     init_display_elements();
 
