@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     for (i = 0; i < nb; i += 1) {
         initJauge(oJauges[i]);
     }
-    var hunter = document.getElementById('hunter');
     updateJauge("hunter",30);
 });
 
