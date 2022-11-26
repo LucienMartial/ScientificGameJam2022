@@ -10,7 +10,7 @@ function start_game() {
 }
 
 let cards = [];
-fetch('../data/cards.json').then((response) => response.json()).then((json) => cards = new Map(Object.entries(json)));
+fetch('../data/cards.json').then((response) => response.json()).then((json) => cards = json);
 
 let game = null;
 let hunter = null;
@@ -25,7 +25,6 @@ function init_classes() {
     farmer = new Actor(ACTOR_TYPE.FARMER);
     researcher = new Actor(ACTOR_TYPE.RESEARCHER);
 
-    console.log(game.cards);
 }
 
 /** DISPLAY UPDATE **/
@@ -52,7 +51,7 @@ let lastReportBtn = null;
 let lastReportContent = null;
 
 function init_display_elements() {
-    hunterDiv = document.getElementById("hunter");
+    hunterDiv = document.getElementById("hunterProgress");
     naturalistDiv = document.getElementById("naturalist");
     farmerDiv = document.getElementById("farmer");
     researcher = document.getElementById("researcher");
@@ -74,6 +73,7 @@ function init_display_elements() {
 
 function display_actors() {
     hunterDiv.innerHTML = hunter.get_gauge();
+    alert(hunterDiv);
     naturalistDiv.innerHTML = naturalist.get_gauge();
     farmerDiv.innerHTML = farmer.get_gauge();
     researcherDiv.innerHTML = researcher.get_gauge();
