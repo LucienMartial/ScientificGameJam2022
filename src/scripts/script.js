@@ -81,13 +81,13 @@ function createCard(description,choiceLeft,choiceRight) {
 
     const cardChoiceLeft = document.createElement("div");
     cardChoiceLeft.classList.add("choice");
-    cardChoiceLeft.classList.add("choiceLeft");
+    cardChoiceLeft.id = "choiceLeft";
     cardChoiceLeft.innerText = choiceLeft;
     card.appendChild(cardChoiceLeft);
 
     const cardChoiceRight = document.createElement("div");
     cardChoiceRight.classList.add("choice");
-    cardChoiceRight.classList.add("choiceRight");
+    cardChoiceRight.id = "choiceRight";
     cardChoiceRight.innerText = choiceRight;
     card.appendChild(cardChoiceRight);
 

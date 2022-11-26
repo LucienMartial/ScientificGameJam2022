@@ -10,7 +10,10 @@ function start_game() {
 }
 
 let cards = [];
-fetch('../data/cards.json').then((response) => response.json()).then((json) => cards = json);
+fetch('data/cards.json').then((response) => response.json()).then((json) => {
+    cards = json;
+    console.log(cards);
+});
 
 let game = null;
 let hunter = null;
@@ -24,7 +27,7 @@ function init_classes() {
     naturalist = new Actor(ACTOR_TYPE.NATURALIST);
     farmer = new Actor(ACTOR_TYPE.FARMER);
     researcher = new Actor(ACTOR_TYPE.RESEARCHER);
-
+    console.log(cards);
 }
 
 /** DISPLAY UPDATE **/
@@ -52,9 +55,9 @@ let lastReportContent = null;
 
 function init_display_elements() {
     hunterDiv = document.getElementById("hunterProgress");
-    naturalistDiv = document.getElementById("naturalist");
-    farmerDiv = document.getElementById("farmer");
-    researcher = document.getElementById("researcher");
+    naturalistDiv = document.getElementById("naturalistProgress");
+    farmerDiv = document.getElementById("farmerProgress");
+    researcherDiv = document.getElementById("researcherProgress");
 
     eventsDiv = document.getElementById("events");
 
@@ -73,7 +76,6 @@ function init_display_elements() {
 
 function display_actors() {
     hunterDiv.innerHTML = hunter.get_gauge();
-    alert(hunterDiv);
     naturalistDiv.innerHTML = naturalist.get_gauge();
     farmerDiv.innerHTML = farmer.get_gauge();
     researcherDiv.innerHTML = researcher.get_gauge();
@@ -102,8 +104,8 @@ function display_last_report() {
 }
 
 function play_game() {
-    const choice1 = document.getElementById("choice1");
-    const choice2 = document.getElementById("choice2");
+    const choice1 = document.getElementById("choiceLeft");
+    const choice2 = document.getElementById("choiceRight");
 
     choice1.onclick = function() {
         resolve_choice("choice1");

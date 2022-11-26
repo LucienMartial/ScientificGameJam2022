@@ -127,13 +127,13 @@ body.dark .card {
     padding-top: 10px;
 }
 
-.choiceLeft{
+#choiceLeft{
     border-top: solid antiquewhite 1px;
     border-right: solid antiquewhite 1px;
     grid-area: choiceLeft;
 }
 
-.choiceRight{
+#choiceRight{
     border-top: solid antiquewhite 1px;
     border-left: solid antiquewhite 1px;
     grid-area: choiceRight;
