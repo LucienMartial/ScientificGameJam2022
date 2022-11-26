@@ -1,6 +1,11 @@
 "use script";
 
-let animalType = ["vole", "boar", "fox", "hare"];
+const ANIMAL_TYPE = {
+    VOLE: "vole",
+    BOAR: "boar",
+    FOX: "fox",
+    HARE: "hare"
+}
 
 class Animal {
     constructor(animalType, threshold, populationSize) {

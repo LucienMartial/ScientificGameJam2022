@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 function start_game() {
     console.log("Starting game");
 
@@ -11,25 +9,19 @@ function start_game() {
 }
 
 let game = null;
-let actors = [];
 
 
 function init_classes() {
     game = new Game();
-    actors.push(new Hunter());
-    actors.push(new Naturalist());
-    actors.push(new Farmer());
-    actors.push(new Researcher());
 }
 
 /** DISPLAY UPDATE **/
 
 function update_game_display() {
-    actor_gauge_display_update();
-    event_display_update();
-    action_display_update();
+    display_actors();
+    display_event();
+    display_actions();
     display_date();
-    display_last_report();
 }
 
 let hunterDiv = null;
@@ -68,14 +60,13 @@ function init_display_elements() {
 }
 
 function display_actors() {
-
 }
 
 function display_event() {
-
+    eventsDiv.innerHTML = game.currentEvent.description;
 }
 
-function display_action() {
+function display_actions() {
 
 }
 

@@ -52,10 +52,3 @@ function set_exclusive_div_visible(divToSet) {
         }
     }
 }
-
-
-/** GAME **/
-
-function startGame() {
-    console.log("Starting game");
-}
