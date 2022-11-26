@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     for (i = 0; i < nb; i += 1) {
         initJauge(oJauges[i]);
     }
-    var chasseur = document.getElementById('chasseur');
-    updateJauge(chasseur,50);
+    var hunter = document.getElementById('hunter');
+    updateJauge("hunter",30);
 });
 
 function createJauge(elem) {
@@ -50,14 +50,20 @@ function initJauge(elem) {
     }
 }
 
+/*
+    * Mise à jour de la jauge, appeler updateJauge
+    * elem = l'élément de la jauge
+    * valeur = la valeur à afficher
+ */
 function updateJauge(elem, valeur) {
     var oBarre;
     var angle;
+    var h = document.getElementById(elem);
     //
     valeur = valeur ? valeur * 1 : 0;
-    elem.setAttribute('data-value', valeur.toFixed(1));
+    h.setAttribute('data-value', valeur.toFixed(1));
     angle = 360 * valeur / 100;
-    oBarre = elem.querySelector('.progress-barre');
+    oBarre = h.querySelector('.progress-barre');
     if (oBarre) {
         oBarre.style.transform = 'rotate(' + angle + 'deg)';
     }
