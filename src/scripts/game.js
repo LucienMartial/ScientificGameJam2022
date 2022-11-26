@@ -75,17 +75,18 @@ function init_display_elements() {
     lastReportBtn = document.getElementById("lastReport");
     lastReportContent = document.getElementById("lastReportContent");
 
-    lastReportBtn.onclick = function() {
-        lastReportContent.style.display = "block";
+    lastReportBtn.onclick = function () {
+        document.documentElement.style.setProperty("--report-display-transition-duration", "0.3s");
+        lastReportContent.classList.toggle("active");
         display_last_report();
     }
 }
 
 function display_actors() {
-    hunterDiv.style.height = hunter.get_gauge()+"%";
-    naturalistDiv.style.height = naturalist.get_gauge()+"%";
-    farmerDiv.style.height = farmer.get_gauge()+"%";
-    researcherDiv.style.height = researcher.get_gauge()+"%";
+    hunterDiv.style.height = hunter.get_gauge() + "%";
+    naturalistDiv.style.height = naturalist.get_gauge() + "%";
+    farmerDiv.style.height = farmer.get_gauge() + "%";
+    researcherDiv.style.height = researcher.get_gauge() + "%";
 }
 
 function display_card() {
@@ -100,11 +101,11 @@ function display_date() {
 
 
 function display_last_report() {
+
     lastReportContent.innerHTML = JSON.stringify(game.get_last_report());
-    lastReportContent.style.display = "block";
-    
-    lastReportContent.onclick = function() {
-        lastReportContent.style.display = "none";
+
+    lastReportContent.onclick = function () {
+        lastReportContent.classList.remove("active");
     }
 }
 
@@ -113,12 +114,12 @@ function play_round() {
         alert("New report");
         game.generate_report();
     }
-    
+
     if (game.get_picked_card().event === false) {
         const choice1 = document.getElementById("choiceLeft");
         const choice2 = document.getElementById("choiceRight");
 
-        choice1.onclick = function() {
+        choice1.onclick = function () {
             resolve_choice("choiceLeft");
             if (!game.is_game_over()) {
                 game.pick_new_card();
@@ -129,20 +130,20 @@ function play_round() {
             }
         }
 
-        choice2.onclick = function() {
+        choice2.onclick = function () {
             resolve_choice("choiceRight");
             if (!game.is_game_over()) {
                 game.pick_new_card();
                 update_game_display();
                 play_round();
-            } else {        
+            } else {
                 end_game();
             }
         }
     } else {
         const nextCard = document.getElementById("nextCard");
 
-        nextCard.onclick = function() {
+        nextCard.onclick = function () {
             resolve_choice();
             if (!game.is_game_over()) {
                 game.pick_new_card();

@@ -60,6 +60,7 @@ class Game {
         this.environment[ENVIRONMENT.FOX] += fox;
         this.environment[ENVIRONMENT.HARE] += hare;
         this.environment[ENVIRONMENT.HAY] += hay;
+        console.log(this.environment);
     }
 
     is_game_over() {
