@@ -12,6 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
     updateJauge("hunter",30);
 });
 
+//add a new style 'foo'
+var textToPierre = [
+    "Zarin et Pierre, les pro du marketing",
+    "Felix et Guillaume adorent les chats",
+    "Pierrick la machine",
+    "Guillaume qui boit 40 cafés par minute",
+]
+
+setTimeout(()=>{speechToPierre(textToPierre[Math.floor(Math.random() * textToPierre.length)])}, 5000);
+
+
+function speechToPierre(Text){
+    var msg = new SpeechSynthesisUtterance(Text);
+    window.speechSynthesis.speak(msg);
+    setTimeout(()=>{speechToPierre(textToPierre[Math.floor(Math.random() * textToPierre.length)])}, 10000);
+}
+
 function createJauge(elem) {
     if (elem) {
         // on commence par un clear
