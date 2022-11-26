@@ -1,9 +1,9 @@
 const cards =[
     {
         name: 0,
-        description: "Les chasseurs veulent chasser de plus grande quantité de renard",
-        desc_choice1: "Autoriser",
-        desc_choice2: "Interdire",
+        description: "Les chasseurs veulent chasser de plus grandes quantités de renards",
+        desc_choice1: "Leur autoriser",
+        desc_choice2: "Leur interdire",
         choice1: {
             hunter: 1,
             naturalist: -1,
@@ -29,7 +29,7 @@ const cards =[
     },
     {
         name: 1,
-        description: "Les naturalistes souhaitent diffuser des photo de renard sur les réseaux dans le cadre du mouvement 'foxCare'",
+        description: "Les naturalistes souhaitent diffuser des photos de renards sur les réseaux dans le cadre du mouvement 'foxCare'",
         desc_choice1: "Approuver",
         desc_choice2: "Désapprouver",
         choice1: {
@@ -57,7 +57,7 @@ const cards =[
     },
     {
         name: 2,
-        description: "On remarque une baisse significative de renard dans la région.",
+        description: "On remarque une baisse significativedu nombre de renards dans la région.",
         desc_choice1: "Enquêter",
         desc_choice2: "Ne pas en tenir compte",
         choice1: {
@@ -85,7 +85,7 @@ const cards =[
     },
     {
         name: 3,
-        description: "On remarque une baisse significative de campagnol dans la région.",
+        description: "On remarque une baisse significative du nombre de campagnols dans la région.",
         desc_choice1: "Enquêter",
         desc_choice2: "Ne pas en tenir compte",
         choice1: {
@@ -113,7 +113,7 @@ const cards =[
     },
     {
         name: 4,
-        description: "On remarque une baisse significative de lièvre dans la région.",
+        description: "On remarque une baisse significative du nombre de lièvres dans la région.",
         desc_choice1: "Enquêter",
         desc_choice2: "Ne pas en tenir compte",
         choice1: {
@@ -141,7 +141,7 @@ const cards =[
     },
     {
         name: 5,
-        description: "Les chercheurs cherchent à développer une méthodologie à partir d’une méthode appelée “l’astrologie”.",
+        description: "Les chercheurs cherchent à développer une méthodologie fondée à partir de l'astrologie",
         desc_choice1: "Les arrêter",
         desc_choice2: "Les soutenir",
         choice1: {
@@ -197,7 +197,7 @@ const cards =[
     },
     {
         name: 7,
-        description: "Suite à une croissance exponentielle de campagnol qui augmente les dégradations dans leurs cultures, Les agriculteurs souhaitent utiliser des pesticides pour les décimer.",
+        description: "Suite à une croissance exponentielle du nombre de campagnols qui dégradent leurs cultures, Les agriculteurs souhaitent organiser une extermination de masse.",
         desc_choice1: "Les soutenir",
         desc_choice2: "Les arrêter",
         choice1: {
@@ -227,7 +227,7 @@ const cards =[
         name: 8,
         description: "Les naturalistes dénoncent un manque de déontologie de la part des chasseurs.",
         desc_choice1: "Faire une enquête sur les chasseurs",
-        desc_choice2: "Ne pas en tenir compte",
+        desc_choice2: "Ne pas s'immiscer dans leurs affaires",
         choice1: {
             hunter: -1,
             naturalist: 1,
@@ -253,7 +253,7 @@ const cards =[
     },
     {
         name: 9,
-        description: "Les agriculteurs souhaitent installer des nichoirs.",
+        description: "Les naturalistes souhaitent installer des nichoirs.",
         desc_choice1: "Autoriser",
         desc_choice2: "Interdire",
         choice1: {
@@ -282,8 +282,8 @@ const cards =[
     {
         name: 10,
         description: "Les scientifique veulent protéger les renards",
-        desc_choice1: "Oui",
-        desc_choice2: "Non",
+        desc_choice1: "Les soutenir",
+        desc_choice2: "Les ignorer",
         choice1: {
             hunter: -1,
             naturalist: 1,
@@ -309,7 +309,7 @@ const cards =[
     },
     {
         name: 11,
-        description: "Un renard a mordu un homme. Le tuez?",
+        description: "Un renard a mordu un homme. Le faire disparaître ?",
         desc_choice1: "Oui",
         desc_choice2: "Non",
         choice1: {
@@ -337,7 +337,7 @@ const cards =[
     },
     {
         name: 11,
-        description: "Les scientifiques demande un financement",
+        description: "Les scientifiques demandent le financement d'une collecte de données",
         desc_choice1: "Octroyer le financement",
         desc_choice2: "Ne pas octroyer le financement",
         choice1: {
@@ -365,7 +365,7 @@ const cards =[
     },
     {
         name: 11,
-        description: "Un stagiaire a fait tombé son café, certaine données des scientifiques ont été effacées.",
+        description: "Un stagiaire a fait tomber son café sur un ordinateur, certaines données des scientifiques sont perdues.",
         effect: {
             hunter: 0,
             naturalist: 0,
@@ -397,7 +397,7 @@ const cards =[
     },
     {
         name: 11,
-        description: "Les scientifiques demande un financement",
+        description: "Les scientifiques demande un financement afin d'aller effectuer des prélèvements sur le terrain",
         desc_choice1: "Octroyer le financement",
         desc_choice2: "Ne pas octroyer le financement",
         choice1: {
@@ -425,9 +425,9 @@ const cards =[
     },
     {
         name: 12,
-        description: "Nouvelle Année de classement ESOD (Espèces Susceptible d'Occasionner des Dégâts), le préfet demande de se prononcer sur le classement du renard en ESOD",
-        desc_choice1: "Garder la situation actuelle",
-        desc_choice2: "Proposer de retirer le renard de la liste ESOD",
+        description: "Nouvelle année de classement ESOD (Espèces Susceptible d'Occasionner des Dégâts), le préfet demande de se prononcer sur le classement du renard en ESOD",
+        desc_choice1: "Le laisser sur la liste ESOD",
+        desc_choice2: "Proposer de le retirer de la liste ESOD",
         choice1: {
             hunter: 2,
             naturalist: 1,
@@ -453,7 +453,7 @@ const cards =[
     },
     {
         name: 13,
-        description: "Les naturaliste propose de discuter du statut de la corneille (animal actuellement classé nuisible)  dans le groupe Careli",
+        description: "Les naturalistes proposent de discuter du statut de la corneille (animal actuellement classé nuisible) dans le groupe Careli",
         desc_choice1: "Careli refuse car la discussion est portée uniquement sur le renard",
         desc_choice2: "Le groupe propose d'en discuter",
         choice1: {
