@@ -19,10 +19,10 @@ class Game {
         this.date = 0;
 
         this.environment = {};
-        this.environment[ENVIRONMENT.VOLE] = 0;
-        this.environment[ENVIRONMENT.FOX] = 0;
-        this.environment[ENVIRONMENT.HARE] = 0;
-        this.environment[ENVIRONMENT.HAY] = 0;
+        this.environment[ENVIRONMENT.VOLE] = 50;
+        this.environment[ENVIRONMENT.FOX] = 50;
+        this.environment[ENVIRONMENT.HARE] = 50;
+        this.environment[ENVIRONMENT.HAY] = 50;
 
         this.cards = cards;
         this.pickedCard = null;
