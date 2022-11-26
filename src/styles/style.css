@@ -5,7 +5,7 @@
 }
 
 :root {
-    --dark-mode-transition-duration:.2s;
+    --dark-mode-transition-duration: .2s;
     --background-color: #f5f5f5;
     --title-color: #333;
     --card-background-color: #333;
@@ -55,16 +55,16 @@ header li {
     cursor: pointer;
 }
 
-header li img{
+header li img {
     height: 100%;
 }
 
 .nav-icon {
     height: 80%;
-    width: 100%;
+    width: 100px;
 }
 
-h1,h2{
+h1, h2 {
     text-align: center;
     color: var(--title-color);
     transition: color var(--dark-mode-transition-duration);
@@ -74,6 +74,7 @@ h1,h2{
     background-image: url("../assets/sun-solid.svg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
 }
 
 #cardContainer {
@@ -87,18 +88,20 @@ h1,h2{
 
 .card {
     height: 100%;
-    width: 20%;
+    width: 40%;
     transition: scale var(--card-scale-transition-duration);
     background-color: var(--card-background-color);
     border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
     overflow: hidden;
+    display: grid;
+    grid-template-areas:
+        "image image"
+        "image image"
+        "desc desc"
+        "choiceLeft choiceRight";
 }
 
-body.dark .card{
+body.dark .card {
     box-shadow: 0 0 20px #FFFA;
 }
 
@@ -106,23 +109,47 @@ body.dark .card{
     scale: 105%;
 }
 
-.card .cardHead {
-    color: var(--card-title-color);
-    height: 10%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: var(--card-title-background-color);
-    /*border-top-left-radius: var(--card-border-radius);
-    border-top-right-radius: var(--card-border-radius);*/
-}
-
 .card p {
     width: 100%;
     padding: 5%;
     color: var(--card-description-color);
+    grid-area: desc;
+}
+
+.choice{
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    color:var(--card-title-color);
+    cursor:pointer;
+    padding-top: 10px;
+}
+
+.choiceLeft{
+    border-top: solid antiquewhite 1px;
+    border-right: solid antiquewhite 1px;
+    grid-area: choiceLeft;
+}
+
+.choiceRight{
+    border-top: solid antiquewhite 1px;
+    border-left: solid antiquewhite 1px;
+    grid-area: choiceRight;
+}
+
+.cardImage{
+    height: 100%;
+    width: 100%;
+    grid-area: image;
+}
+
+.card.hunter .cardImage{
+    background-image: url("../assets/hunter.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #options {
@@ -136,7 +163,7 @@ body.dark .card{
     gap: 2px;
 }
 
-#options button{
+#options button {
     height: 50px;
     width: 200px;
     cursor: pointer;
@@ -147,99 +174,17 @@ body.dark .card{
     border: none;
 }
 
-body.dark #options button{
+body.dark #options button {
     border: solid #666666 1px;
 }
 
-/*
-    This is the code for the PROGRESS BAR -- OPINION
- */
-
-.progress-circle{
-    position: relative;             /* pour servir de référent */
-    box-sizing: border-box;         /* prise en compte bordure dans la dimension */
-    font-size: 6em;                 /* pour définir les dimensions */
-    width: 1em;                     /* fixe la largeur */
-    height: 1em;                    /* fixe la hauteur */
-    border-radius: 50%;             /* rendu aspect circulaire */
-    border: .15em solid #CDE;       /* couleur de fond de l'anneau */
-    background-color: #FFF;         /* couleur de fond de la progress bar */
-}
-
-.progress-masque {
-    position: absolute;
-    width: 1em;                     /* 100% de la largeur */
-    height: 1em;                    /* 100% de la hauteur */
-    left: -.15em;                   /* décalage de la largeur bordure de la gauge */
-    top: -.15em;                    /* décalage de la largeur bordure de la gauge */
-    clip: rect(0, 1em, 1em, .5em);  /* par défaut seule la partie droite est visible */
-}
-.progress-circle[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-masque,
-.progress-circle[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-masque,
-.progress-circle[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-masque,
-.progress-circle[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-masque,
-.progress-circle[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-masque,
-.progress-circle[data-value^='100'] .progress-masque {
-    clip: rect(auto, auto, auto, auto);
-}
-
-.progress-barre,
-.progress-sup50 {
-    position: absolute;
-    box-sizing: border-box;         /* prise en compte bordure dans la dimension */
-    border-width: .15em;            /* largeur bordure de la gauge */
-    border-style: solid;
-    border-color: #069;
-    border-radius: 50%;             /* rendu aspect circulaire */
-    width: 1em;                     /* largeur à 100% */
-    height: 1em;                    /* hauteur à 100% */
-    clip: rect(0, .5em, 1em, 0);    /* on ne garde que la partie gauche */
-}
-
-.progress-sup50 {
-    display: none;
-    clip: rect(0, 1em, 1em, .5em);
-}
-
-.progress-circle:after {
-    content: attr(data-value) "%";  /* récup. valeur de progression */
-    font-size: 0.15em;              /* taille de la font en % du parent */
-    height: 100%;                   /* centrage dans le parent */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /*-- pour effet shadow intérieur --*/
-    border-radius: 50%;
-    box-shadow: 0 0 .5em rgba(0, 0, 0, .5) inset;
-}
-
-/* sup à 50*/
-.progress-circle[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-sup50,
-.progress-circle[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-sup50,
-.progress-circle[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-sup50,
-.progress-circle[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-sup50,
-.progress-circle[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-sup50,
-.progress-circle[data-value^='100'] .progress-sup50 {
-    display:block;
-}
-
-.progress-circle.red .progress-masque {
-    border-color: #B40000;          /* couleur de la barre d'avancement */
-}
-
-.progress-circle small{
-    font-size: 15em;
-}
-
-.progress-circle.green .progress-masque {
-    border-color: #33b400;          /* couleur de la barre d'avancement */
-}
-
-.progress-circle.orange .progress-masque {
-    border-color: #ff8800;          /* couleur de la barre d'avancement */
-}
-
-.progress-circle.violet .progress-masque {
-    border-color: #cf00ff;          /* couleur de la barre d'avancement */
+.progress { 
+    height: 20px;
+    position: relative;
+    background: #333;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow:  0 0 10px rgba(255, 255, 255, 0.3);
+    width: 200px;
+    transform: rotate(270deg) scaleY(150%);
 }

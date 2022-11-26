@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** CARDS **/
     const cardContainer = document.getElementById("cardContainer");
-    const card1 = createCard("Card 1", "This is a card");
+    const card1 = createCard( "This is a card", "Left", "Right");
 
     cardContainer.appendChild(card1);
 });
@@ -66,17 +66,31 @@ function startGame() {
     console.log("Starting game");
 }
 
-function createCard(title, description) {
+function createCard(description,choiceLeft,choiceRight) {
     const card = document.createElement("div");
     card.classList.add("card");
 
-    const cardHeader = document.createElement("div");
-    cardHeader.classList.add("cardHead");
-    cardHeader.innerText = title;
-    card.appendChild(cardHeader);
 
     const cardDesc = document.createElement("p");
     cardDesc.innerText = description;
     card.appendChild(cardDesc);
+
+    const cardImage = document.createElement("div");
+    cardImage.classList.add("cardImage");
+    card.appendChild(cardImage);
+
+    const cardChoiceLeft = document.createElement("div");
+    cardChoiceLeft.classList.add("choice");
+    cardChoiceLeft.classList.add("choiceLeft");
+    cardChoiceLeft.innerText = choiceLeft;
+    card.appendChild(cardChoiceLeft);
+
+    const cardChoiceRight = document.createElement("div");
+    cardChoiceRight.classList.add("choice");
+    cardChoiceRight.classList.add("choiceRight");
+    cardChoiceRight.innerText = choiceRight;
+    card.appendChild(cardChoiceRight);
+
+    card.classList.add("hunter");
     return card;
 }
