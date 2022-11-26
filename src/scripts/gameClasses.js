@@ -41,6 +41,16 @@ class Game {
         this.date++;
     }
 
+    unused_cards() {
+        console.log(this.cards);
+        for (let i = 0; i < this.cards.length; i++) {
+            if (this.cards[i].used === false) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     update_environment(vole, fox, hare, hay) {
         this.environment[ENVIRONMENT.VOLE] += vole;
         this.environment[ENVIRONMENT.FOX] += fox;
@@ -49,10 +59,10 @@ class Game {
     }
 
     is_game_over() {
-        return this.gauge <= 0 || this.gauge >= 100 || this.date >= 30;
+        return !this.unused_cards() || this.gauge <= 0 || this.gauge >= 100 || this.date >= 30;
     }
 
-    get_report() {
+    generate_report() {
         let report = {
             date: this.date,
             environment: this.environment
