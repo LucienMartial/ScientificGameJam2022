@@ -7,17 +7,17 @@ const EXCL_DIVS = {
 
 let exclusiveDivs = null;
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     exclusiveDivs = document.getElementsByClassName("exclusive");
 
     set_exclusive_div_visible(EXCL_DIVS.MENU);
 
-    
+
     /** PLAY GAME **/
 
     const playGameButton = document.getElementById("startGame");
 
-    playGameButton.onclick = function() {
+    playGameButton.onclick = function () {
         start_game();
         set_exclusive_div_visible(EXCL_DIVS.GAME);
     }
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const menuButton = document.getElementById("leaveGame");
 
-    menuButton.onclick = function() {
+    menuButton.onclick = function () {
         set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
 
@@ -36,11 +36,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const sunIcon = "assets/sun-solid.svg";
     const moonIcon = "assets/moon-solid.svg";
     let darkMode = false;
-    darkModeButton.onclick = function() {
+    darkModeButton.onclick = function () {
         darkModeButton.style.backgroundImage = darkMode ? `url("${sunIcon}")` : `url("${moonIcon}")`;
         darkMode = !darkMode;
         document.body.classList.toggle("dark");
     }
+
+    /** CARDS **/
+    const cardContainer = document.getElementById("cardContainer");
+    const card1 = createCard("Card 1", "This is a card");
+
+    cardContainer.appendChild(card1);
 });
 
 function set_exclusive_div_visible(divToSet) {
@@ -58,4 +64,19 @@ function set_exclusive_div_visible(divToSet) {
 
 function startGame() {
     console.log("Starting game");
+}
+
+function createCard(title, description) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const cardHeader = document.createElement("div");
+    cardHeader.classList.add("cardHead");
+    cardHeader.innerText = title;
+    card.appendChild(cardHeader);
+
+    const cardDesc = document.createElement("p");
+    cardDesc.innerText = description;
+    card.appendChild(cardDesc);
+    return card;
 }
