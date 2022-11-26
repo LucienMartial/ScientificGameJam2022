@@ -81,7 +81,7 @@ function display_date() {
 
 
 function display_last_report() {
-    lastReportContent.innerHTML = game.get_last_report();
+    lastReportContent.innerHTML = JSON.stringify(game.get_last_report());
     lastReportContent.style.display = "block";
     
     lastReportContent.onclick = function() {
@@ -90,6 +90,9 @@ function display_last_report() {
 }
 
 function play_round() {
+    // if game date % 10 compute report
+
+    game.generate_report();
     
     if (game.get_picked_card().event === false) {
         const choice1 = document.getElementById("choiceLeft");
