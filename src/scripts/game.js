@@ -98,9 +98,10 @@ function display_last_report() {
 }
 
 function play_round() {
-    // if game date % 10 compute report
-
-    game.generate_report();
+    if (game.get_date() % 10 === 0 && game.get_date() !== 0) {
+        alert("New report");
+        game.generate_report();
+    }
     
     if (game.get_picked_card().event === false) {
         const choice1 = document.getElementById("choiceLeft");
