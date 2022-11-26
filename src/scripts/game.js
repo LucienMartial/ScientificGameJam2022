@@ -9,12 +9,6 @@ function start_game() {
     play_game();
 }
 
-let cards = [];
-fetch('data/cards.json').then((response) => response.json()).then((json) => {
-    cards = json;
-    console.log(cards);
-});
-
 let game = null;
 let hunter = null;
 let naturalist = null;
