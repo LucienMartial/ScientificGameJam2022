@@ -154,7 +154,7 @@ const cards =[
     },
     {
         name: 5,
-        description: "Les chercheurs cherchent à développer une méthodologie fondée à partir de l'astrologie.",
+        description: "Les chercheurs cherchent à développer une méthodologie fondée sur l'astrologie.",
         desc_choice1: "Les arrêter",
         desc_choice2: "Les soutenir",
         choice1: {
@@ -294,7 +294,7 @@ const cards =[
     },
     {
         name: 10,
-        description: "Les scientifique veulent protéger les renards.",
+        description: "Les scientifiques veulent protéger les renards.",
         desc_choice1: "Les soutenir",
         desc_choice2: "Les ignorer",
         choice1: {
@@ -394,7 +394,7 @@ const cards =[
     },
     {
         name: 14,
-        description: "Les naturalistes distribuent des tracts en faveur de protection des renards.",
+        description: "Les naturalistes distribuent des tracts en faveur de la protection des renards.",
         effect: {
             hunter: -mediumChange,
             naturalist: mediumChange,
@@ -718,9 +718,9 @@ const cards =[
     },
     {
         name: 26,
-        description: "Un agriculteur du zonage Careli à des renards qui se sont installés dans son bâtiment agricole et l’on détériorer, il demande une dérogation pour les piégers.",
+        description: "Un agriculteur du zonage Careli à des renards qui se sont installés dans son bâtiment agricole et l’on détérioré, il demande une dérogation pour les piéger.",
         desc_choice1: "Careli lui accorde la dérogation",
-        desc_choice2: "Careli lui refuse la dérogation",
+        desc_choice2: "Careli refuse",
         choice1: {
             hunter: noChange,
             naturalist: minorChange,
@@ -746,7 +746,7 @@ const cards =[
     },
     {
         name: 27,
-        description: "Un agriculteur demande à être reçu par le groupe, il est fermement opposé au tire sur le renard sur ces parcelles.",
+        description: "Un agriculteur demande à être reçu par le groupe, il est fermement opposé au tir sur le renard sur ces parcelles.",
         desc_choice1: "Careli accepte de le recevoir",
         desc_choice2: "Careli refuse de le recevoir",
         choice1: {
@@ -774,7 +774,7 @@ const cards =[
     },
     {
         name: 28,
-        description: "Un agriculteur est inquiet et contacte le Groupe Careli, il est dans une zone ou le renard est protégé, ceux-ci commencent à jouer avec ces enfants.",
+        description: "Un agriculteur est inquiet et contacte le Groupe Careli, il est dans une zone ou le renard est protégé et ceux-ci commencent à jouer avec ses enfants.",
         desc_choice1: "Careli accepte de le recevoir",
         desc_choice2: "Careli refuse de le recevoir",
         choice1: {
@@ -802,8 +802,8 @@ const cards =[
     },
     {
         name: 29,
-        description: "Une manifestation est organisé devant la maison des agriculteurs, lors de celle-ci un des membre de Careli et dénonce les dérives de l’agriculture intensive, les référants agricoles demandent de parler de cette incident lors d’une réunion Careli.",
-        desc_choice1: "Le groupe accepte, il faut apaisez les tensions",
+        description: "Une manifestation est organisée devant la maison des agriculteurs, lors de celle-ci un des membre de Careli dénonce les dérives de l’agriculture intensive, les référants agricoles demandent à parler de cet incident lors d’une réunion Careli.",
+        desc_choice1: "Le groupe accepte, il faut apaiser les tensions",
         desc_choice2: "Le groupe refuse, Careli n’est pas le lieu pour débattre de cette question",
         choice1: {
             hunter: -1,
@@ -830,7 +830,7 @@ const cards =[
     },
     {
         name: 30,
-        description: "Il est proposer au groupe careli de participer au groupe 'les éleveurs à la ferme'.",
+        description: "Il est proposé au groupe careli de participer au groupe 'les chercheurs à la ferme'.",
         desc_choice1: "Le groupe accepte malgré le temps de travail supplémentaire",
         desc_choice2: "Le groupe refuse, aucun participant n’est disponible à cette date",
         choice1: {
@@ -859,7 +859,7 @@ const cards =[
     {
         name: 31,   
         description: "Les agriculteurs souhaitent que le projet avance plus vite, 10 ans c’est trop long, ils proposent de reduire la durée du projet à 5 ans.",
-        desc_choice1: "Le groupe accepte d’échanger sur cette proposition, avec plus d’effort on auras plus de résultats",
+        desc_choice1: "Le groupe accepte d’échanger sur cette proposition, avec plus d’efforts on aura plus de résultats",
         desc_choice2: "Le groupe refuse, le temps de la recherche est un temps long",
         choice1: {
             hunter: noChange,
@@ -1110,9 +1110,9 @@ const cards =[
     },
     {
         name: 40,
-        description: "Les naturalistes proposent d’adapter le dispositif careli et sur la zone ou les renard sont piégeable et tuable, il ne le soit qu'à proximité des poulailler et des fermes.",
-        desc_choice1: "Careli valide se choix",
-        desc_choice2: "Careli invalide se choix",
+        description: "Les naturalistes proposent d’adapter le dispositif careli sur la zone où les renard sont piégeables et tuables, il faut que ça ne soit qu'au niveau des poulaillers et des fermes.",
+        desc_choice1: "Careli valide ce choix",
+        desc_choice2: "Careli invalide ce choix",
         choice1: {
             hunter: -mediumChange,
             naturalist: majorChange,
@@ -1138,9 +1138,9 @@ const cards =[
     },
     {
         name: 41,
-        description: "Une game-jam est organisé sur le projet Careli, les chasseurs sont très caricaturé.",
-        desc_choice1: "Careli accepte, le projet est beau malgré la caricature",
-        desc_choice2: "Careli demande de retravailler le projet avec moins de caricature",
+        description: "Une game-jam est organisée sur le projet Careli, les chasseurs sont très caricaturés dans un des jeux proposés.",
+        desc_choice1: "Careli ne réagit pas, le projet est beau malgré la caricature",
+        desc_choice2: "Careli demande à retravailler le projet avec plus de réalisme",
         choice1: {
             hunter: -minorChange,
             naturalist: minorChange,
@@ -1166,9 +1166,9 @@ const cards =[
     },
     {
         name: 42,
-        description: "Une game-jam est organisé sur le projet Careli, les naturalistes sont très caricaturé.",
-        desc_choice1: "Careli accepte, le projet est beau malgré la caricature",
-        desc_choice2: "Careli demande de retravailler le projet avec moins de caricature",
+        description: "Une game-jam est organisée sur le projet Careli, les naturalistes sont très caricaturés dans un des jeux proposés.",
+        desc_choice1: "Careli ne réagit pas, le projet est beau malgré la caricature",
+        desc_choice2: "Careli demande à retravailler le projet avec plus de réalisme",
         choice1: {
             hunter: minorChange,
             naturalist: -minorChange,
@@ -1194,9 +1194,9 @@ const cards =[
     },
     {
         name: 43,
-        description: "Une game-jam est organisé sur le projet Careli, les Agriculteurs sont très caricaturé.",
-        desc_choice1: "Careli accepte, le projet est beau malgré la caricature",
-        desc_choice2: "Careli demande de retravailler le projet avec moins de caricature",
+        description: "Une game-jam est organisée sur le projet Careli, les agriculteurs sont très caricaturés dans un des jeux.",
+        desc_choice1: "Careli ne réagit pas, le projet est beau malgré la caricature",
+        desc_choice2: "Careli demande à retravailler le projet avec plus de réalisme",
         choice1: {
             hunter: minorChange,
             naturalist: minorChange,
@@ -1222,9 +1222,9 @@ const cards =[
     },
     {
         name: 42,
-        description: "Une game-jam est organisé sur le projet Careli, les chercheurs sont très caricaturé.",
-        desc_choice1: "Careli accepte, le projet est beau malgré la caricature",
-        desc_choice2: "Careli demande de retravailler le projet avec moins de caricature",
+        description: "Une game-jam est organisée sur le projet Careli, les chercheurs sont très caricaturés dans un des jeux.",
+        desc_choice1: "Careli ne réagit pas, le projet est beau malgré la caricature",
+        desc_choice2: "Careli demande à retravailler le projet avec plus de réalisme",
         choice1: {
             hunter: minorChange,
             naturalist: minorChange,
@@ -1250,7 +1250,7 @@ const cards =[
     },
     {
         name: 43,
-        description: "Un naturaliste a reçu  une vidéo de caméra de surveillance d’un renard qui attaque un poulailler.",
+        description: "Un naturaliste a reçu de multiples vidéos de caméras de surveillance où des renards attaquent des poulaillers.",
         desc_choice1: "Careli prend le temps d’en discuter",
         desc_choice2: "Careli n'en tient pas compte",
         choice1: {
@@ -1278,9 +1278,9 @@ const cards =[
     },
     {
         name: 44,
-        description: "Les naturalistes proposent de discuter du statut de la loup (animal actuellement classé nuisible)  dans le groupe Careli.",
-        desc_choice1: "Le groupe refuse, car discussion uniquement autour du renard",
-        desc_choice2: "Le groupe propose dans discuter",
+        description: "Les naturalistes proposent de discuter du statut de loup (animal actuellement classé nuisible) dans le groupe Careli.",
+        desc_choice1: "Le groupe refuse, car la discussion tourne uniquement autour du renard",
+        desc_choice2: "Le groupe propose d'en discuter",
         choice1: {
             hunter: noChange,
             naturalist: -majorChange,
@@ -1306,9 +1306,9 @@ const cards =[
     },
     {
         name: 45,
-        description: "Les naturalistes proposent de discuter du statut de la linx (animal actuellement classé nuisible)  dans le groupe Careli.",
-        desc_choice1: "Le groupe refuse, car discussion uniquement autour du renard",
-        desc_choice2: "Le groupe propose dans discuter",
+        description: "Les naturalistes proposent de discuter du statut de la fouine (animal actuellement classé nuisible) dans le groupe Careli.",
+        desc_choice1: "Le groupe refuse, car la discussion est uniquement centrée autour du renard",
+        desc_choice2: "Le groupe propose d'en discuter",
         choice1: {
             hunter: noChange,
             naturalist: -mediumChange,
@@ -1334,9 +1334,9 @@ const cards =[
     },
     {
         name: 46,
-        description: "Suite à un effondrement de mobilier urbain à cause des terrier de blaireau, les chasseurs demandent à en discuter au sein de Careli.",
-        desc_choice1: "Careli ne s’en inquiète pas car le projet ne tient pas compte des blaireau",
-        desc_choice2: "Careli prend le temps de chercher une solution",
+        description: "Suite à un effondrement de mobilier urbain à cause des terrier de blaireau, les chasseurs demandent la permission d'en éliminer.",
+        desc_choice1: "Vous leur indiquez que vous ne pouvez pas vous prononcer sur ce sujet",
+        desc_choice2: "Vous leur autorisez à en éliminer une qantité importante",
         choice1: {
             hunter: -minorChange,
             naturalist: -minorChange,
@@ -1362,7 +1362,7 @@ const cards =[
     },
     {
         name: 47,
-        description: "Beaucoup de départs en retraite ont lieu, les chasseurs demandent une augmentation du quota de chasse par chasseur .",
+        description: "Beaucoup de départs en retraite ont lieu, les chasseurs demandent une augmentation du quota de chasse par chasseur.",
         desc_choice1: "Careli accepte",
         desc_choice2: "Careli refuse",
         choice1: {
@@ -1390,7 +1390,7 @@ const cards =[
     },
     {
         name: 48,
-        description: "Un agriculteur nourrit les renards, car il les adorent.",
+        description: "Un agriculteur nourrit les renards, car il les adore.",
         desc_choice1: "Careli décide de lui en parler pour le dissuader",
         desc_choice2: "Careli décide de ne pas agir",
         choice1: {
@@ -1419,7 +1419,7 @@ const cards =[
     {
         name: 55,
         description: "Le journal veut communiquer sur le projet careli chasseur-naturaliste.",
-        desc_choice1: "Careli accept",
+        desc_choice1: "Careli accepte",
         desc_choice2: "Careli refuse",
         choice1: {
             hunter: mediumChange,
@@ -1447,7 +1447,7 @@ const cards =[
     {
         name: 49,
         description: "Le journal veut communiquer sur le projet careli chasseur-agriculteur.",
-        desc_choice1: "Careli accept",
+        desc_choice1: "Careli accepte",
         desc_choice2: "Careli refuse",
         choice1: {
             hunter: mediumChange,
@@ -1475,7 +1475,7 @@ const cards =[
     {
         name: 50,
         description: "Le journal veut communiquer sur le projet careli chasseur-chercheur.",
-        desc_choice1: "Careli accept",
+        desc_choice1: "Careli accepte",
         desc_choice2: "Careli refuse",
         choice1: {
             hunter: mediumChange,
@@ -1503,7 +1503,7 @@ const cards =[
     {
         name: 51,
         description: "Le journal veut communiquer sur le projet careli naturaliste-agriculteur.",
-        desc_choice1: "Careli accept",
+        desc_choice1: "Careli accepte",
         desc_choice2: "Careli refuse",
         choice1: {
             hunter: noChange,
@@ -1531,7 +1531,7 @@ const cards =[
     {
         name: 52,
         description: "Le journal veut communiquer sur le projet careli naturaliste-chercheur.",
-        desc_choice1: "Careli accept",
+        desc_choice1: "Careli accepte",
         desc_choice2: "Careli refuse",
         choice1: {
             hunter: noChange,
@@ -1559,7 +1559,7 @@ const cards =[
     {
         name: 53,
         description: "Le journal veut communiquer sur le projet careli agriculteur-chercheur.",
-        desc_choice1: "Careli accept",
+        desc_choice1: "Careli accepte",
         desc_choice2: "Careli refuse",
         choice1: {
             hunter: noChange,
@@ -1586,9 +1586,9 @@ const cards =[
     },
     {
         name: 54,
-        description: "Des fermiers on apercu des campagnoles allumant des feux dans la foret.",
+        description: "Des fermiers on aperçu des campagnols allumant des feux dans la forêt.",
         desc_choice1: "laisser faire la nature.",
-        desc_choice2: "convoquer les campagnoles.",
+        desc_choice2: "convoquer les campagnols.",
         choice1: {
             hunter: noChange,
             naturalist: noChange,
@@ -1614,7 +1614,7 @@ const cards =[
     },
     {
         name: 55,
-        description: "Les chasseurs shouaite organiser des atelier d'introduction à la taxidermie dans les écoles.",
+        description: "Les chasseurs souhaitent organiser des atelier d'introduction à la taxidermie dans les écoles.",
         desc_choice1: "vous acceptez, cela permettra de sensibiliser les jeunes",
         desc_choice2: "vous refusez, c'est inapproprié",
         choice1: {
@@ -1642,8 +1642,8 @@ const cards =[
     },
     {
         name: 56,
-        description: "Les chercheurs shouaite capturer des renards vivant pour les mettre en cage.",
-        desc_choice1: "acceptez, ils ont surement leur raisons",
+        description: "Les chercheurs souhaitent capturer des renards pour les mettre en cage.",
+        desc_choice1: "acceptez, ils ont sûrement leurs raisons",
         desc_choice2: "refusez, pour des raisons éthiques",
         choice1: {
             hunter: noChange,
@@ -1699,7 +1699,7 @@ const cards =[
 
     {
         name: 58,
-        description: "Des pieges à ours retrouvé sur les sentiers de randonnée.",
+        description: "Des pièges à ours retrouvés sur les sentiers de randonnée.",
         desc_choice1: "en rajouter, on ne sait jamais",
         desc_choice2: "les enlever, c'est dangereux pour les randonneurs",
         choice1: {
@@ -1727,7 +1727,7 @@ const cards =[
     },
     {
         name: 59,
-        description: "Des campagnoles géant ont été aperçu dans la foret.",
+        description: "Des campagnols géants ont été aperçus dans la forêt.",
         desc_choice1: "convoquer les chasseurs",
         desc_choice2: "c'est une création de la nature",
         choice1: {
