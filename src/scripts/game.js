@@ -33,10 +33,6 @@ function start_game() {
     const gameContext = document.getElementById("gameContext");
     gameContext.style.display = "block";
 
-    // gameContext.onclick = function () {
-    //     gameContext.style.display = "none";
-    // }
-
     gameContext.onclick = function () {
         gameContext.style.display = "none";
     }
@@ -118,7 +114,17 @@ function display_card() {
 }
 
 function display_date() {
-    currentDate.innerHTML = "Date: " + game.get_date();
+    let currDate = game.get_date();
+    let month = currDate % 12;
+    let year = Math.floor(currDate / 12);
+
+    if (month === 0) {
+        currentDate.innerHTML = "Année " + year;
+    } else if (year === 0) {
+        currentDate.innerHTML = "Mois " + month;
+    } else {
+        currentDate.innerHTML = "Année " + year + " - Mois " + month;
+    }
 }
 
 
@@ -131,7 +137,18 @@ function display_last_report() {
         lastReportContent.innerHTML = "";
         const date = document.createElement("p");
         date.classList.add("reportDate");
-        date.innerText = "Date: " + report.date;
+
+        let repMonth = report.date % 12;
+        let repYear = Math.floor(report.date / 12);
+
+        if (repMonth === 0) {
+            date.innerText = "Année " + repYear;
+        } else if (repYear === 0) {
+            date.innerText = "Mois " + repMonth;
+        } else {
+            date.innerText = "Année " + repYear + " - Mois " + repMonth;
+        }
+        
         lastReportContent.appendChild(date);
 
         lastReportContent.appendChild(document.createElement("br"));
@@ -159,8 +176,8 @@ function display_last_report() {
 }
 
 function play_round() {
-    if (game.get_date() % 10 === 0 && game.get_date() !== 0) {
-        alert("New report");
+    if ((game.get_date() / 5) % 3 === 0 && game.get_date() !== 0) {
+        pop_up("Un nouveau rapport est disponible !");
         game.generate_report();
     }
 
@@ -225,12 +242,13 @@ function process_click_on_card(side) {
         cardContainer.classList.remove("clickedRight");
         cardContainer.classList.remove("clickedCenter");
         cardContainer.classList.add("startTransition");
-        if (!game.is_game_over()) {
+
+        if (!game.is_game_over([hunter, naturalist, farmer, researcher])) {
             game.pick_new_card();
             update_game_display();
             play_round();
         } else {
-            end_game();
+            end_game(game.is_game_over([hunter, naturalist, farmer, researcher]));
         }
         setTimeout(function () {
             document.documentElement.style.setProperty("--card-move-transition-duration", "0.3s");
@@ -240,6 +258,20 @@ function process_click_on_card(side) {
     }, 300);
 }
 
-function end_game() {
-    alert("Game over!");
+function end_game(message) {
+    alert(message + " ! %TEST%%TEST%");
+    set_exclusive_div_visible(EXCL_DIVS.MENU);
+    pop_up(message);
+}
+
+function pop_up(text) {
+    let popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS\n";
+
+    popup.onclick = function () {
+        popup.remove();
+    }
+
+    document.body.appendChild(popup);
 }
