@@ -243,9 +243,17 @@ body.inGame {
     height: 90%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    background-color: #666666;
+    background-color: var(--card-background-color);
     font-size: larger;
     padding: 5%;
+    border-radius: 3%;
+    color: var(--text-color);
+}
+
+#gamePopup h2{
+    color: darkred;
+    width: 100%;
+    text-align: center;
 }
 
 
