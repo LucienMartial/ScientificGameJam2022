@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 
 const EXCL_DIVS = {
     MENU: "menu",

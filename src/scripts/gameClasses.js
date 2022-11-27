@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 
 const ACTOR_TYPE = {
     HUNTER: "hunter",
