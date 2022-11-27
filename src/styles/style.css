@@ -40,13 +40,13 @@ header {
     align-items: center;
 }
 
-header h1{
+header h1 {
     position: absolute;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
 }
 
-header img{
+header img {
     height: 95%;
 }
 
@@ -59,7 +59,7 @@ h1 {
     color: var(--title-color);
 }
 
-#game{
+#game {
     height: 90vh;
 }
 
@@ -70,7 +70,7 @@ h1 {
         "hunter card card naturalist"
         "farmer card card researcher";
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     grid-row-gap: 10px;
     padding-top: 1%;
@@ -121,7 +121,7 @@ h1 {
     box-shadow: 0 0 50px #FFFA;
 }
 
-.card.event{
+.card.event {
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
         "image"
@@ -130,13 +130,17 @@ h1 {
         "next";
 }
 
-body{
+body {
     background-image: url("../assets/background_meadow_adobe_express.svg");
     background-blend-mode: multiply;
-    background-repeat : no-repeat;
+    background-repeat: no-repeat;
     background-size: 105%;
     background-position-x: 40%;
     background-position-y: 20%;
+}
+
+body.inGame{
+    background-image: url("../assets/image_background_2.png");
 }
 
 
@@ -213,7 +217,7 @@ body{
     border: solid var(--border-color) 1px;
 }
 
-#options #currentDate{
+#options #currentDate {
     text-align: center;
 }
 
@@ -320,27 +324,20 @@ body{
     font-weight: bold;
 }
 
-/*
-    h1
- */
-h1{
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-}
 
 /* start */
 
 
-.start-btn{
+.start-btn {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    display: inline-block;
-    margin:5px;
-    top: 50px;
     width: 200px;
     height: 75px;
-    position: relative;
-    left: 43%;
     font-weight: bold;
-    padding: 10px 10px 10px 10px ;
+    padding: 10px 10px 10px 10px;
     color: var(--title-color);
     cursor: pointer;
     outline: none;
@@ -349,11 +346,7 @@ h1{
     border: solid var(--border-color) 1px;
 
 }
-.start-btn:active {
-    box-shadow: none;
-    position: relative;
-}
 
-#menu{
+#menu {
     height: 200px;
 }

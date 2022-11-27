@@ -27,8 +27,7 @@ function reset_game() {
 
 function start_game() {
     // récupérer image de h1
-    var body = document.body;
-    body.style.backgroundImage = "url('assets/image_background_2.png')";
+    document.body.classList.add("inGame");
     reset_game();
     const gameContext = document.getElementById("gameContext");
     gameContext.style.display = "block";
@@ -93,8 +92,7 @@ function init_display_elements() {
     }
 
     leaveGameBtn.onclick = function () {
-        document.body.style.backgroundImage = "url('assets/background_meadow_adobe_express.svg')";
-        document.body.style.backgroundSize = "100%";
+        document.body.classList.remove("inGame");
         optionsDiv.remove();
         set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
