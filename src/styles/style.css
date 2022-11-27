@@ -168,7 +168,7 @@ body.inGame {
     padding: 5%;
     color: var(--card-description-color);
     grid-area: desc;
-    text-align: justify;
+    text-align: left;
 }
 
 .choice {
@@ -423,7 +423,7 @@ body.inGame {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 10%;
+    /*width: 10%;*/
     height: 10%;
     font-size: 3rem;
     font-weight: bold;
