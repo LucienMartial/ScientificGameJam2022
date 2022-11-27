@@ -59,7 +59,6 @@ function init_classes() {
 /** DISPLAY UPDATE **/
 
 function update_game_display() {
-    display_options();
     display_actors();
     display_card();
     display_date();
@@ -100,14 +99,6 @@ function init_display_elements() {
         document.body.classList.remove("inGame");
         optionsDiv.remove();
         set_exclusive_div_visible(EXCL_DIVS.MENU);
-    }
-}
-
-function display_options() {
-    if (is_game_started == true) {
-        optionsDiv.style.display = "inline-block";
-    } else {
-        optionsDiv.style.display = "none";
     }
 }
 
