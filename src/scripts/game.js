@@ -59,6 +59,7 @@ function init_classes() {
 /** DISPLAY UPDATE **/
 
 function update_game_display() {
+    display_options();
     display_actors();
     display_card();
     display_date();
@@ -81,6 +82,12 @@ function init_display_elements() {
         document.documentElement.style.setProperty("--report-display-transition-duration", "0.3s");
         lastReportContent.classList.toggle("active");
         display_last_report();
+    }
+}
+
+function display_options() {
+    if (game.date > 0) {
+        optionsDiv.style.display = "inline-block";
     }
 }
 

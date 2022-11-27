@@ -218,7 +218,7 @@ body.dark .card {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display:inline-block;
+    display: none;
     gap: 2px;
 }
 
