@@ -158,7 +158,7 @@ function display_last_report() {
         lastReportContent.appendChild(hare);
 
         const hay = document.createElement("p");
-        hay.innerHTML = "<br> Evolution de la quantité de foin: " + report.environment[ENVIRONMENT.HAY] + " %";
+        hay.innerHTML = "<br> Evolution de la quantité de foin : " + report.environment[ENVIRONMENT.HAY] + " %";
         lastReportContent.appendChild(hay);
     }
 
