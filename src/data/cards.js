@@ -81,7 +81,7 @@ const cards =[
             vole: envMinorChange,
             fox: -envMediumChange,
             hare: envMinorChange,
-            hay: -aminorChange
+            hay: -minorChange
         },
         choice2: {
             hunter: noChange,
