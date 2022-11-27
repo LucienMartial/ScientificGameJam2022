@@ -18,6 +18,8 @@ let currentDate = null;
 let lastReportBtn = null;
 let lastReportContent = null;
 
+let is_game_started = false;
+
 function reset_game() {
     for (let i = 0; i < cards.length; i++) {
         cards[i].used = false;
@@ -25,6 +27,8 @@ function reset_game() {
 }
 
 function start_game() {
+    is_game_started = true;
+
     // récupérer image de h1
     var body = document.body;
     body.style.backgroundImage = "url('assets/image_background_2.png')";
@@ -86,8 +90,10 @@ function init_display_elements() {
 }
 
 function display_options() {
-    if (game.date > 0) {
+    if (is_game_started == true) {
         optionsDiv.style.display = "inline-block";
+    } else {
+        optionsDiv.style.display = "none";
     }
 }
 
@@ -228,5 +234,6 @@ function process_click_on_card(side) {
 }
 
 function end_game() {
+    is_game_started = false;
     alert("Game over!");
 }
