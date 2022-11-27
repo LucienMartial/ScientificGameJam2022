@@ -99,7 +99,7 @@ class Game {
         }
 
         for (let i = 0; i < actors.length; i++) {
-            if (actors[i].get_gauge() < 10) {
+            if (actors[i].get_gauge() <= 0) {
                 switch (actors[i].get_type()) {
                     case ACTOR_TYPE.HUNTER:
                         return hunterGameOver;
