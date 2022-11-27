@@ -227,7 +227,7 @@ body.inGame {
     text-align: center;
 }
 
-#gameContext {
+#gamePopup {
     position: absolute;
     left: 50%;
     top: 50%;

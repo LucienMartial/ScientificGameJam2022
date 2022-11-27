@@ -1,5 +1,7 @@
 "use strict";
 
+let gamePopup = null;
+
 let game = null;
 let hunter = null;
 let naturalist = null;
@@ -33,12 +35,8 @@ function start_game() {
     // récupérer image de h1
     document.body.classList.add("inGame");
     reset_game();
-    const gameContext = document.getElementById("gameContext");
-    gameContext.style.display = "block";
 
-    gameContext.onclick = function () {
-        gameContext.style.display = "none";
-    }
+    pop_up(introText);
 
     init_classes();
     init_display_elements();
@@ -90,15 +88,11 @@ function init_display_elements() {
     document.getElementsByTagName("header")[0].appendChild(optionsDiv);
 
     lastReportBtn.onclick = function () {
-        document.documentElement.style.setProperty("--report-display-transition-duration", "0.3s");
-        lastReportContent.classList.toggle("active");
-        display_last_report(false, "");
+        display_last_report();
     }
 
     leaveGameBtn.onclick = function () {
-        document.body.classList.remove("inGame");
-        optionsDiv.remove();
-        set_exclusive_div_visible(EXCL_DIVS.MENU);
+        leave_game();
     }
 }
 
@@ -124,8 +118,12 @@ function display_date() {
 }
 
 
-function display_last_report(endGame, message) {
+function display_last_report() {
+    document.documentElement.style.setProperty("--report-display-transition-duration", "0.3s");
+    lastReportContent.classList.toggle("active");
+
     const report = game.get_last_report();
+
     if (report === null) {
         lastReportContent.innerHTML = "Aucun rapport n'a encore été effectué.";
     } else {
@@ -137,26 +135,30 @@ function display_last_report(endGame, message) {
         let repMonth = report.date % 12;
         let repYear = Math.floor(report.date / 12);
 
-        date.innerText = "Année " + (repYear + 1) + "<br> Mois " + (repMonth + 1);
+        date.innerText = "Année " + (repYear + 1) + " - Mois " + (repMonth + 1);
         
         lastReportContent.appendChild(date);
 
         lastReportContent.appendChild(document.createElement("br"));
 
+        const population = document.createElement("p");
+        population.innerHTML = "Effectif des populations :";
+        lastReportContent.appendChild(population);
+
         const vole = document.createElement("p");
-        vole.innerHTML = "Population de campagnol: " + report.environment["vole"];
+        vole.innerHTML = "Campagnols : " + report.environment[ENVIRONMENT.VOLE] + " %";
         lastReportContent.appendChild(vole);
 
         const fox = document.createElement("p");
-        fox.innerHTML = "Population de renard: " + report.environment["fox"];
+        fox.innerHTML = "Renards : " + report.environment[ENVIRONMENT.FOX] + " %";
         lastReportContent.appendChild(fox);
 
         const hare = document.createElement("p");
-        hare.innerHTML = "Population de lièvre: " + report.environment["hare"];
+        hare.innerHTML = "Lièvres : " + report.environment[ENVIRONMENT.HARE] + " %";
         lastReportContent.appendChild(hare);
 
         const hay = document.createElement("p");
-        hay.innerHTML = "Quantité de foin: " + report.environment["hay"];
+        hay.innerHTML = "<br> Evolution de la quantité de foin: " + report.environment[ENVIRONMENT.HAY] + " %";
         lastReportContent.appendChild(hay);
     }
 
@@ -167,8 +169,8 @@ function display_last_report(endGame, message) {
 
 function play_round() {
     if ((game.get_date() / 5) % 3 === 0 && game.get_date() !== 0) {
-        pop_up("Un nouveau rapport est disponible !");
         game.generate_report();
+        display_last_report();
     }
 
     if (game.get_picked_card().event === false) {
@@ -249,21 +251,25 @@ function process_click_on_card(side) {
 }
 
 function end_game(message) {
-    alert(message + " !");
-    set_exclusive_div_visible(EXCL_DIVS.MENU);
     game.generate_report();
+    pop_up(message);
+    leave_game();
 }
 
 function pop_up(text) {
-    alert(text + "MODIF POPUP");
-    
-    // let popup = document.createElement("div");
-    // popup.classList.add("popup");
-    // popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS %TEST%";
+    gamePopup = document.getElementById("gamePopup");
 
-    // popup.onclick = function () {
-    //     popup.remove();
-    // }
+    gamePopup.innerHTML = text + "MODIF POPUP";
+    gamePopup.style.display = "block";
 
-    // document.body.appendChild(popup);
+    gamePopup.onclick = function () {
+        gamePopup.innerHTML = "";
+        gamePopup.style.display = "none";
+    }
+}
+
+function leave_game() {
+    document.body.classList.remove("inGame");
+    optionsDiv.remove();
+    set_exclusive_div_visible(EXCL_DIVS.MENU);
 }

@@ -95,12 +95,21 @@ class Game {
         }
         
         if (this.date / 5 > 21) {
-            return "Game over";
+            return balancedGameOver;
         }
 
         for (let i = 0; i < actors.length; i++) {
             if (actors[i].get_gauge() < 5) {
-                return "Les " + actors[i].type + "s ont quitté la table";
+                switch (actors[i].get_type()) {
+                    case ACTOR_TYPE.HUNTER:
+                        return hunterGameOver;
+                    case ACTOR_TYPE.NATURALIST:
+                        return naturalistGameOver;
+                    case ACTOR_TYPE.FARMER:
+                        return farmerGameOver;
+                    case ACTOR_TYPE.RESEARCHER:
+                        return researcherGameOver;
+                }
             }
         }
 
