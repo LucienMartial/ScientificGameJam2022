@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // récupérer body
         var body =  document.getElementsByTagName("body");
         body.item(0).style.backgroundImage = "url('assets/background_meadow_adobe_express.svg')";
-        body.item(0).style.backgroundSize = "100%";
+        body.item(0).style.backgroundSize = "105%";
         set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
 
