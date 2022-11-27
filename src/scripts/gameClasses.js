@@ -99,7 +99,7 @@ class Game {
         }
 
         for (let i = 0; i < actors.length; i++) {
-            if (actors[i].get_gauge() < 50) {
+            if (actors[i].get_gauge() < 5) {
                 return "Les " + actors[i].type + "s ont quitté la table";
             }
         }
