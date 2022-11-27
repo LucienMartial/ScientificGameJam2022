@@ -283,11 +283,11 @@ body.inGame {
     left: 50%;
     top: 50%;
     width: 50%;
-    height: 50%;
+    min-height: 50%;
+    font-size: 1.5rem;
     transform: translate(-50%, -50%);
     z-index: 10;
     background-color: var(--card-background-color);
-    font-size: larger;
     padding: 2% 5%;
     text-align: justify;
     border-radius: 3%;
@@ -384,7 +384,7 @@ body.inGame {
 #lastReportContent {
     font-family: 'Indie Flower', cursive;
     font-size: 2rem;
-    height: 50vh;
+    min-height: 50vh;
     width: 30%;
     position: absolute;
     top: -100vh;
