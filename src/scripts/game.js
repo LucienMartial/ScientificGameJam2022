@@ -257,20 +257,22 @@ function process_click_on_card(side) {
     }, 300);
 }
 
-function end_game() {
-    alert("Game over!");
+function end_game(message) {
+    alert(message + " !");
     set_exclusive_div_visible(EXCL_DIVS.MENU);
     game.generate_report();
 }
 
 function pop_up(text) {
-    let popup = document.createElement("div");
-    popup.classList.add("popup");
-    popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS %TEST%";
+    alert(text + "MODIF POPUP");
+    
+    // let popup = document.createElement("div");
+    // popup.classList.add("popup");
+    // popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS %TEST%";
 
-    popup.onclick = function () {
-        popup.remove();
-    }
+    // popup.onclick = function () {
+    //     popup.remove();
+    // }
 
-    document.body.appendChild(popup);
+    // document.body.appendChild(popup);
 }
