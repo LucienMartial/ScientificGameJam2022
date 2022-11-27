@@ -178,6 +178,9 @@ body.inGame {
     border-top: solid var(--border-color) 1px;
     cursor: pointer;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #choiceLeft {

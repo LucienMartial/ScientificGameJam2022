@@ -85,13 +85,17 @@ function create_card(description, choiceLeft, choiceRight, event, img) {
         const cardChoiceLeft = document.createElement("div");
         cardChoiceLeft.classList.add("choice");
         cardChoiceLeft.id = "choiceLeft";
-        cardChoiceLeft.innerText = choiceLeft;
+        const cardChoiceLeftDesc = document.createElement("p");
+        cardChoiceLeftDesc.innerText = choiceLeft;
+        cardChoiceLeft.appendChild(cardChoiceLeftDesc);
         card.appendChild(cardChoiceLeft);
 
         const cardChoiceRight = document.createElement("div");
         cardChoiceRight.classList.add("choice");
         cardChoiceRight.id = "choiceRight";
-        cardChoiceRight.innerText = choiceRight;
+        const cardChoiceRightDesc = document.createElement("p");
+        cardChoiceRightDesc.innerText = choiceRight;
+        cardChoiceRight.appendChild(cardChoiceRightDesc);
         card.appendChild(cardChoiceRight);
     } else {
         const cardNext = document.createElement("div");
