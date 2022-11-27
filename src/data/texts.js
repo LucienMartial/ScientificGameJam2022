@@ -1,6 +1,6 @@
 "use strict";
 
-const introText = "(Cliquez pour jouer) <br> Bienvenue dans **** <br> Vous avez 10 ans pour récupérer des données et réguler la population d'animaux de la région au travers de choix qui s'afficheront sous forme de carte à chaque tour. <br> Vous aurez accès aux opinions de chaque acteurs de la région et devez agir en fonction. De plus tous les 10 tours vous aurez accès à des \"reports\" qui vous permettront de voir l'évolution de la région. (taux de population + taux de foin).";
+const introText = "(Cliquez pour jouer) <br> Bienvenue dans **** <br> Vous avez 10 ans pour récupérer des données et réguler la population d'animaux de la région au travers de choix qui s'afficheront sous forme de carte à chaque tour. <br> Vous aurez accès aux opinions de chaque acteurs de la région et devez agir en fonction. De plus tous les 10 tours vous aurez accès à des \"reports\" qui vous permettront de voir l'évolution de la région (taux de population + taux de foin).";
 
 const hunterGameOver = "Les chasseurs sont en contradiction avec le consortium, ils ne suivent pas les indications du consortium et chassent à tout va. Les cadavres d'animaux se multiplient, des coups de balles près des maisons sont retrouvés. Les gens vivent dans la peur. C'est l'ère de la terreur.";
 
@@ -10,4 +10,4 @@ const researcherGameOver = "Les chercheurs sont en contradiction avec le consort
 
 const naturalistGameOver = "Les naturalistes sont en contradiction avec le consortium,  ils ne suivent pas les indications du consortium et décident de protéger eux-mêmes la nature ! Ils commencent par saboter les chasseurs et les agriculteurs. Ils démolissent les infrastructures d'armes et les réserves de foin. De plus les animaux reprennent de plus en plus de territoire. C'est l'hécatombe. C'est le retour de l'Âge de Pierre.";
 
-const balancedGameOver = "L'équilibre entre tous les acteurs du consortium est restauré, les chasseurs ont trouvé leur point d'équilibre de chasse, les agriculteurs cultivent en paix, les chercheurs continuent de faire des expériences plus sombres les unes que les autres, les naturalistes acceptent le bilan avec chagrin. Vous avez réussi à garder une harmonie dans l'environnement naturel et entre tous les acteurs ! Bravo !"
+const balancedGameOver = "L'équilibre entre tous les acteurs du consortium est maintenu, les chasseurs ont trouvé leur point d'équilibre de chasse, les agriculteurs cultivent en paix, les chercheurs continuent de faire des expériences plus sombres les unes que les autres, les naturalistes acceptent le bilan avec chagrin. Vous avez réussi à garder une harmonie dans l'environnement naturel et entre tous les acteurs ! Bravo !"

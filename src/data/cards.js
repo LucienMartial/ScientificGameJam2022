@@ -1467,7 +1467,7 @@ const cards =[
             vole: noChange,
             fox: noChange,
             hare: noChange,
-            hay: noChangminorChangee
+            hay: noChange
         },
         used: false,
         event: false
