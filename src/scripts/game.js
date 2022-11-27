@@ -89,7 +89,7 @@ function init_display_elements() {
     lastReportBtn.onclick = function () {
         document.documentElement.style.setProperty("--report-display-transition-duration", "0.3s");
         lastReportContent.classList.toggle("active");
-        display_last_report();
+        display_last_report(false, "");
     }
 
     leaveGameBtn.onclick = function () {
@@ -128,7 +128,7 @@ function display_date() {
 }
 
 
-function display_last_report() {
+function display_last_report(endGame, message) {
     const report = game.get_last_report();
     if (report === null) {
         lastReportContent.innerHTML = "Aucun rapport n'a encore été effectué.";
@@ -172,6 +172,9 @@ function display_last_report() {
 
     lastReportContent.onclick = function () {
         lastReportContent.classList.remove("active");
+        if (endGame) {
+            end_game(message);
+        }
     }
 }
 
@@ -261,13 +264,13 @@ function process_click_on_card(side) {
 function end_game(message) {
     alert(message + " ! %TEST%%TEST%");
     set_exclusive_div_visible(EXCL_DIVS.MENU);
-    pop_up(message);
+    display_last_report(endGame, message);
 }
 
 function pop_up(text) {
     let popup = document.createElement("div");
     popup.classList.add("popup");
-    popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS\n";
+    popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS %TEST%";
 
     popup.onclick = function () {
         popup.remove();

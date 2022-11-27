@@ -56,10 +56,37 @@ class Game {
     }
 
     update_environment(vole, fox, hare, hay) {
-        this.environment[ENVIRONMENT.VOLE] += vole;
-        this.environment[ENVIRONMENT.FOX] += fox;
-        this.environment[ENVIRONMENT.HARE] += hare;
-        this.environment[ENVIRONMENT.HAY] += hay;
+        if (this.environment[ENVIRONMENT.VOLE] + vole < 0) {
+            this.environment[ENVIRONMENT.VOLE] = 0;
+        } else if (this.environment[ENVIRONMENT.VOLE] + vole > 100) {
+            this.environment[ENVIRONMENT.VOLE] = 100;
+        } else {
+            this.environment[ENVIRONMENT.VOLE] += vole;
+        }
+
+        if (this.environment[ENVIRONMENT.FOX] + fox < 0) {
+            this.environment[ENVIRONMENT.FOX] = 0;
+        } else if (this.environment[ENVIRONMENT.FOX] + fox > 100) {
+            this.environment[ENVIRONMENT.FOX] = 100;
+        } else {
+            this.environment[ENVIRONMENT.FOX] += fox;
+        }
+
+        if (this.environment[ENVIRONMENT.HARE] + hare < 0) {
+            this.environment[ENVIRONMENT.HARE] = 0;
+        } else if (this.environment[ENVIRONMENT.HARE] + hare > 100) {
+            this.environment[ENVIRONMENT.HARE] = 100;
+        } else {
+            this.environment[ENVIRONMENT.HARE] += hare;
+        }
+
+        if (this.environment[ENVIRONMENT.HAY] + hay < 0) {
+            this.environment[ENVIRONMENT.HAY] = 0;
+        } else if (this.environment[ENVIRONMENT.HAY] + hay > 100) {
+            this.environment[ENVIRONMENT.HAY] = 100;
+        } else {
+            this.environment[ENVIRONMENT.HAY] += hay;
+        }
     }
 
     is_game_over(actors) {
