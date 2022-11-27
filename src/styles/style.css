@@ -213,12 +213,11 @@ body.dark .card {
 #options {
     position: absolute;
     right: 10px;
-    top: 10px;
+    bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display:inline-block;
     gap: 2px;
 }
 
@@ -310,6 +309,10 @@ body.dark #options button {
     object-fit: contain;
 }
 
+#currentDate {
+    color: var(--text-color);
+}
+
 #lastReportContent {
     font-family: 'Indie Flower', cursive;
     font-size: 2rem;
@@ -361,22 +364,19 @@ h1{
     position: relative;
     left: 43%;
     font-weight: bold;
-    padding: 10px 0 10px 10px ;
-    background-color: lightgray;
-    text-shadow: -1px -1px black, 1px 1px white;
-    color: gray;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -o-border-radius: 7px;
-    border-radius: 7px;
-    box-shadow: 0 .2em gray;
+    padding: 10px 10px 10px 10px ;
+    color: var(--title-color);
     cursor: pointer;
+    outline: none;
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+    border-radius: 5%;
+    border: solid var(--border-color) 1px;
 
 }
 .start-btn:active {
     box-shadow: none;
     position: relative;
-    top: .2em;
 }
 
 #menu{
