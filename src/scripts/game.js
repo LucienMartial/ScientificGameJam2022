@@ -254,11 +254,8 @@ function process_click_on_card(side) {
 
 function end_game(message) {
     game.generate_report();
-    pop_up(message,true);
-    
-    setTimeout(function () {
-        leave_game();
-    }, 2000);
+    pop_up(message);
+    leave_game();
 }
 
 function pop_up(text, gameover) {
