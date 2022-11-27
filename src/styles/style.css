@@ -152,7 +152,7 @@ body {
 }
 
 body.inGame {
-    background-image: url("../assets/image_background_2.png");
+    background-image: url("../assets/Illustration.jpg");
 }
 
 
@@ -165,6 +165,7 @@ body.inGame {
     padding: 5%;
     color: var(--card-description-color);
     grid-area: desc;
+    text-align: justify;
 }
 
 .choice {
@@ -193,13 +194,49 @@ body.inGame {
     height: 100%;
     width: 100%;
     grid-area: image;
+    margin-top: 3%;
 }
 
-.card.hunter .cardImage {
-    background-image: url("../assets/hunter.png");
+.card .cardImage {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.cardResearcher .cardImage {
+    background-image: url("../assets/logo/scientifique.png");
+}
+
+.cardHunter .cardImage {
+    background-image: url("../assets/logo/chasseur.png");
+}
+
+.cardNaturalist .cardImage {
+    background-image: url("../assets/logo/naturaliste.png");
+}
+
+.cardFarmer .cardImage {
+    background-image: url("../assets/logo/agriculteur_2.png");
+}
+
+.cardBear .cardImage {
+    background-image: url("../assets/logo/piegeAOurs.png");
+}
+
+.cardHare .cardImage {
+    background-image: url("../assets/logo/lievre.png");
+}
+
+.cardVole .cardImage {
+    background-image: url("../assets/logo/rat.png");
+}
+
+.cardAssociation .cardImage {
+    background-image: url("../assets/logo/association.png");
+}
+
+.cardFox .cardImage{
+    background-image: url("../assets/logo/fox.png");
 }
 
 #options {
@@ -251,7 +288,7 @@ body.inGame {
     border: solid var(--border-color) 2px;
 }
 
-#gamePopup h2{
+#gamePopup h2 {
     color: darkred;
     width: 100%;
     text-align: center;

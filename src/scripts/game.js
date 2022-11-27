@@ -105,7 +105,7 @@ function display_actors() {
 
 function display_card() {
     cardContainer.innerHTML = "";
-    const card = create_card(game.get_picked_card().description, game.get_picked_card().desc_choice1, game.get_picked_card().desc_choice2, game.get_picked_card().event);
+    const card = create_card(game.get_picked_card().description, game.get_picked_card().desc_choice1, game.get_picked_card().desc_choice2, game.get_picked_card().event, game.get_picked_card().img);
     cardContainer.appendChild(card);
 }
 
