@@ -70,7 +70,7 @@ const cards =[
     },
     {
         name: 2,
-        description: "On remarque une baisse significative du nombre de renards dans la région.",
+        description: "On remarque une baisse significative du nombre de renards dans la région",
         desc_choice1: "Enquêter",
         desc_choice2: "Ne pas en tenir compte",
         choice1: {
@@ -98,7 +98,7 @@ const cards =[
     },
     {
         name: 3,
-        description: "On remarque une baisse significative du nombre de campagnols dans la région.",
+        description: "On remarque une baisse significative du nombre de campagnols dans la région",
         desc_choice1: "Enquêter",
         desc_choice2: "Ne pas en tenir compte",
         choice1: {
@@ -126,7 +126,7 @@ const cards =[
     },
     {
         name: 4,
-        description: "On remarque une baisse significative du nombre de lièvres dans la région.",
+        description: "On remarque une baisse significative du nombre de lièvres dans la région",
         desc_choice1: "Enquêter",
         desc_choice2: "Ne pas en tenir compte",
         choice1: {
@@ -154,7 +154,7 @@ const cards =[
     },
     {
         name: 5,
-        description: "Les chercheurs cherchent à développer une méthodologie fondée à partir de l'astrologie.",
+        description: "Les chercheurs cherchent à développer une méthodologie fondée sur l'astrologie",
         desc_choice1: "Les arrêter",
         desc_choice2: "Les soutenir",
         choice1: {
@@ -182,7 +182,7 @@ const cards =[
     },
     {
         name: 6,
-        description: "Les chasseurs souhaitent organiser une battue pour éliminer les renards galeux.",
+        description: "Les chasseurs souhaitent organiser une battue pour éliminer les renards galeux",
         desc_choice1: "Les soutenir",
         desc_choice2: "Les arrêter",
         choice1: {
@@ -210,7 +210,7 @@ const cards =[
     },
     {
         name: 7,
-        description: "Suite à une croissance exponentielle du nombre de campagnols qui dégradent leurs cultures, Les agriculteurs souhaitent organiser une extermination de masse.",
+        description: "Suite à une croissance exponentielle du nombre de campagnols qui dégradent leurs cultures, Les agriculteurs souhaitent organiser une extermination de masse",
         desc_choice1: "Les soutenir",
         desc_choice2: "Les arrêter",
         choice1: {
@@ -238,7 +238,7 @@ const cards =[
     },
     {
         name: 8,
-        description: "Les naturalistes dénoncent un manque de déontologie de la part des chasseurs.",
+        description: "Les naturalistes dénoncent un manque de déontologie de la part des chasseurs",
         desc_choice1: "Faire une enquête sur les chasseurs",
         desc_choice2: "Ne pas s'immiscer dans leurs affaires",
         choice1: {
@@ -266,7 +266,7 @@ const cards =[
     },
     {
         name: 9,
-        description: "Les naturalistes souhaitent installer des nichoirs.",
+        description: "Les naturalistes souhaitent installer des nichoirs",
         desc_choice1: "Autoriser",
         desc_choice2: "Interdire",
         choice1: {
@@ -322,7 +322,7 @@ const cards =[
     },
     {
         name: 11,
-        description: "Un renard a mordu un homme. Le faire disparaître ?",
+        description: "Un renard a mordu un homme. S'occuper de son cas ?",
         desc_choice1: "Oui",
         desc_choice2: "Non",
         choice1: {
@@ -378,7 +378,7 @@ const cards =[
     },
     {
         name: 11,
-        description: "Un stagiaire a fait tomber son café sur un ordinateur, certaines données des scientifiques sont perdues.",
+        description: "Un stagiaire a fait tomber son café sur un ordinateur, certaines données des scientifiques sont perdues",
         effect: {
             hunter: 0,
             naturalist: 0,
