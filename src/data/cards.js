@@ -38,7 +38,8 @@ const cards =[
             hay: -envMinorChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 1,
@@ -66,7 +67,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturaliste"
     },
     {
         name: 2,
@@ -94,7 +96,8 @@ const cards =[
             hay: -envMinorChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "fox"
     },
     {
         name: 3,
@@ -122,7 +125,8 @@ const cards =[
             hay: envMinorChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "vole"
     },
     {
         name: 4,
@@ -150,7 +154,8 @@ const cards =[
             hay: envMinorChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hare"
     },
     {
         name: 5,
@@ -178,7 +183,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 6,
@@ -206,7 +212,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 7,
@@ -234,7 +241,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 8,
@@ -262,7 +270,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 9,
@@ -290,7 +299,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 10,
@@ -318,7 +328,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 11,
@@ -346,7 +357,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "fox"
     },
     {
         name: 12,
@@ -374,7 +386,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 13,
@@ -390,7 +403,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: true
+        event: true,
+        img: "researcher"
     },
     {
         name: 14,
@@ -406,7 +420,8 @@ const cards =[
             hay: minorChange
         },
         used: false,
-        event: true
+        event: true,
+        img: "naturalist"
     },
     {
         name: 15,
@@ -434,7 +449,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "fox"
     },
     {
         name: 16,
@@ -462,7 +478,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 17,
@@ -490,7 +507,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 18,
@@ -518,7 +536,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 19,
@@ -546,7 +565,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 20,
@@ -574,7 +594,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 21,
@@ -602,7 +623,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 22,
@@ -630,7 +652,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 23,
@@ -658,7 +681,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 24,
@@ -686,7 +710,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "association"
     },
     {
         name: 25,
@@ -714,7 +739,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "association"
     },
     {
         name: 26,
@@ -742,7 +768,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 27,
@@ -770,7 +797,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 28,
@@ -798,7 +826,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 29,
@@ -826,7 +855,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 30,
@@ -854,7 +884,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 31,   
@@ -882,7 +913,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 32,
@@ -910,7 +942,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 33,
@@ -938,7 +971,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 34,
@@ -966,7 +1000,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 35,
@@ -994,7 +1029,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 36,
@@ -1022,7 +1058,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 37,
@@ -1050,7 +1087,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 38,
@@ -1078,7 +1116,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 39,
@@ -1106,7 +1145,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 40,
@@ -1134,7 +1174,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 41,
