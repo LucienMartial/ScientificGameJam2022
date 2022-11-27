@@ -68,7 +68,7 @@ const cards =[
         },
         used: false,
         event: false,
-        img: "naturaliste"
+        img: "naturalist"
     },
     {
         name: 2,
@@ -1203,7 +1203,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 42,
@@ -1231,7 +1232,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 43,
@@ -1259,7 +1261,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 42,
@@ -1287,7 +1290,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 43,
@@ -1315,7 +1319,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 44,
@@ -1343,7 +1348,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 45,
@@ -1371,7 +1377,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
     {
         name: 46,
@@ -1399,7 +1406,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hare"
     },
     {
         name: 47,
@@ -1427,7 +1435,8 @@ const cards =[
             hay: -majorChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 48,
@@ -1455,35 +1464,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
-    },
-    {
-        name: 55,
-        description: "Le journal veut communiquer sur le projet careli chasseur-naturaliste.",
-        desc_choice1: "Careli accepte",
-        desc_choice2: "Careli refuse",
-        choice1: {
-            hunter: mediumChange,
-            naturalist: mediumChange,
-            farmer: noChange,
-            researcher: noChange,
-            vole: noChange,
-            fox: noChange,
-            hare: noChange,
-            hay: noChange
-        },
-        choice2: {
-            hunter: -minorChange,
-            naturalist: -minorChange,
-            farmer: mediumChange,
-            researcher: mediumChange,
-            vole: noChange,
-            fox: noChange,
-            hare: noChange,
-            hay: noChange
-        },
-        used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 49,
@@ -1511,7 +1493,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 50,
@@ -1539,7 +1522,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 51,
@@ -1567,7 +1551,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 52,
@@ -1595,7 +1580,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 53,
@@ -1623,7 +1609,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 54,
@@ -1651,7 +1638,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "farmer"
     },
     {
         name: 55,
@@ -1679,7 +1667,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hunter"
     },
     {
         name: 56,
@@ -1707,7 +1696,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "researcher"
     },
     {
         name: 57,
@@ -1735,7 +1725,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "naturalist"
     },
 
     {
@@ -1764,7 +1755,8 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "bear"
     },
     {
         name: 59,
@@ -1792,6 +1784,7 @@ const cards =[
             hay: noChange
         },
         used: false,
-        event: false
+        event: false,
+        img: "hare"
     }
 ]
