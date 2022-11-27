@@ -36,7 +36,7 @@ function start_game() {
     document.body.classList.add("inGame");
     reset_game();
 
-    pop_up(introText,false);
+    pop_up(introText, false);
 
     init_classes();
     init_display_elements();
@@ -254,7 +254,23 @@ function process_click_on_card(side) {
 
 function end_game(message) {
     game.generate_report();
-    pop_up(message);
+
+    let report = game.get_last_report();
+
+    message += "<br><br> <h2> Rapport final </h2>";
+    message += "<center>Effectif des populations :<br>";
+    message += "Campagnols : " + report.environment[ENVIRONMENT.VOLE] + " %<br>";
+    message += "Renards : " + report.environment[ENVIRONMENT.FOX] + " %<br>";
+    message += "Lièvres : " + report.environment[ENVIRONMENT.HARE] + " %<br><br>";
+    message += "Quantité de foin : " + report.environment[ENVIRONMENT.HAY] + " %<br></center>";
+
+    
+
+    if (message !== balancedGameOver) {
+        pop_up(message, true);
+    } else {
+        pop_up(message, false);
+    }
     leave_game();
 }
 
