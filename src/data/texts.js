@@ -1,6 +1,6 @@
 "use strict";
 
-const introText = "<h2>(Cliquez pour jouer)</h2> <br> Bienvenue dans **** <br> Vous avez 10 ans pour récupérer des données et réguler la population d'animaux de la région au travers de choix qui s'afficheront sous forme de carte à chaque tour. <br> Vous aurez accès aux opinions de chaque acteurs de la région et devez agir en fonction. De plus tous les 10 tours vous aurez accès à des \"reports\" qui vous permettront de voir l'évolution de la région (taux de population + taux de foin).";
+const introText = "<h2>(Cliquez pour jouer)</h2> <br> Bienvenue dans le Careli's Game. <br><br> Vous avez 10 ans pour récupérer des données et réguler la population d'animaux de la région au travers de choix qui s'afficheront sous forme de carte à chaque tour. <br><br> Vous aurez accès aux opinions de chaque acteurs de la région et devez agir en fonction. Tous les cinq tours vous aurez accès à des \"relevés scientifiques\" qui vous permettront de voir l'évolution de la population et des récoltes.";
 
 const hunterGameOver = "Les chasseurs sont en contradiction avec le consortium, ils ne suivent pas les indications du consortium et chassent à tout va. Les cadavres d'animaux se multiplient, des coups de balles près des maisons sont retrouvés. Les gens vivent dans la peur. C'est l'ère de la terreur.";
 

@@ -264,13 +264,8 @@ function end_game(message) {
     message += "Lièvres : " + report.environment[ENVIRONMENT.HARE] + " %<br><br>";
     message += "Quantité de foin : " + report.environment[ENVIRONMENT.HAY] + " %<br></center>";
 
-    
+    pop_up(message, true);
 
-    if (message !== balancedGameOver) {
-        pop_up(message, true);
-    } else {
-        pop_up(message, false);
-    }
     leave_game();
 }
 
@@ -278,7 +273,7 @@ function pop_up(text, gameover) {
     gamePopup = document.getElementById("gamePopup");
     if(gameover) {
         const title = document.createElement("h2");
-        title.innerText = "PERDU !";
+        title.innerText = "FIN DU JEU !";
         gamePopup.appendChild(title);
     }
     const message = document.createElement("p");
