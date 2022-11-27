@@ -36,7 +36,7 @@ function start_game() {
     document.body.classList.add("inGame");
     reset_game();
 
-    pop_up(introText,false);
+    pop_up(introText, false);
 
     init_classes();
     init_display_elements();
@@ -105,7 +105,7 @@ function display_actors() {
 
 function display_card() {
     cardContainer.innerHTML = "";
-    const card = create_card(game.get_picked_card().description, game.get_picked_card().desc_choice1, game.get_picked_card().desc_choice2, game.get_picked_card().event);
+    const card = create_card(game.get_picked_card().description, game.get_picked_card().desc_choice1, game.get_picked_card().desc_choice2, game.get_picked_card().event, game.get_picked_card().img);
     cardContainer.appendChild(card);
 }
 
@@ -254,7 +254,18 @@ function process_click_on_card(side) {
 
 function end_game(message) {
     game.generate_report();
-    pop_up(message);
+
+    let report = game.get_last_report();
+
+    message += "<br><br> <h2> Rapport final </h2>";
+    message += "<center>Effectif des populations :<br>";
+    message += "Campagnols : " + report.environment[ENVIRONMENT.VOLE] + " %<br>";
+    message += "Renards : " + report.environment[ENVIRONMENT.FOX] + " %<br>";
+    message += "Lièvres : " + report.environment[ENVIRONMENT.HARE] + " %<br><br>";
+    message += "Quantité de foin : " + report.environment[ENVIRONMENT.HAY] + " %<br></center>";
+
+    pop_up(message, true);
+
     leave_game();
 }
 
@@ -262,7 +273,7 @@ function pop_up(text, gameover) {
     gamePopup = document.getElementById("gamePopup");
     if(gameover) {
         const title = document.createElement("h2");
-        title.innerText = "PERDU !";
+        title.innerText = "FIN DU JEU !";
         gamePopup.appendChild(title);
     }
     const message = document.createElement("p");
