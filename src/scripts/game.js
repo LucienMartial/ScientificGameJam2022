@@ -99,6 +99,7 @@ function init_display_elements() {
     leaveGameBtn.onclick = function () {
         document.body.style.backgroundImage = "url('assets/background_meadow_adobe_express.svg')";
         document.body.style.backgroundSize = "100%";
+        optionsDiv.remove();
         set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
 }
