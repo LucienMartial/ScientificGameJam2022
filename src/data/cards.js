@@ -1,8 +1,8 @@
 const noChange = 0;
-const minorChange = 3;
-const mediumChange = 5;
-const majorChange = 8;
-const giganticChange = 15;
+const minorChange = 7;
+const mediumChange = 14;
+const majorChange = 21;
+const giganticChange = 30;
 
 const envMinorChange = 5;
 const envMediumChange = 12;
@@ -1586,9 +1586,150 @@ const cards =[
     }*/
     {
         name: 54,
-        description: "",
-        desc_choice1: "",
-        desc_choice2: "",
+        description: "Des fermiers on apercu des campagnoles allumant des feux dans la foret.",
+        desc_choice1: "laisser faire la nature.",
+        desc_choice2: "convoquer les campagnoles.",
+        choice1: {
+            hunter: noChange,
+            naturalist: noChange,
+            farmer: mediumChange,
+            researcher: mediumChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        choice2: {
+            hunter: mediumChange,
+            naturalist: mediumChange,
+            farmer: -minorChange,
+            researcher: -minorChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        used: false,
+        event: false
+    }
+    {
+        name: 55,
+        description: "Les chasseurs shouaite organiser des atelier d'introduction à la taxidermie dans les écoles.",
+        desc_choice1: "vous acceptez, cela permettra de sensibiliser les jeunes",
+        desc_choice2: "vous refusez, c'est inapproprié",
+        choice1: {
+            hunter: noChange,
+            naturalist: noChange,
+            farmer: mediumChange,
+            researcher: mediumChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        choice2: {
+            hunter: mediumChange,
+            naturalist: mediumChange,
+            farmer: -minorChange,
+            researcher: -minorChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        used: false,
+        event: false
+    },
+    {
+        name: 56,
+        description: "Les chercheurs shouaite capturer des renards vivant pour les mettre en cage.",
+        desc_choice1: "acceptez, ils ont surement leur raisons",
+        desc_choice2: "refusez, pour des raisons éthiques",
+        choice1: {
+            hunter: noChange,
+            naturalist: noChange,
+            farmer: mediumChange,
+            researcher: mediumChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        choice2: {
+            hunter: mediumChange,
+            naturalist: mediumChange,
+            farmer: -minorChange,
+            researcher: -minorChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        used: false,
+        event: false
+    },
+    {
+        name: 57,
+        description: "Des naturalistes pratiquent du lobbying à la sortie des écoles.",
+        desc_choice1: "interdire cette propagande",
+        desc_choice2: "autoriser les naturalistes à faire de la sensibilisation",
+        choice1: {
+            hunter: noChange,
+            naturalist: noChange,
+            farmer: mediumChange,
+            researcher: mediumChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        choice2: {
+            hunter: mediumChange,
+            naturalist: mediumChange,
+            farmer: -minorChange,
+            researcher: -minorChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        used: false,
+        event: false
+    },
+
+    {
+        name: 58,
+        description: "Des pieges à ours retrouvé sur les sentiers de randonnée.",
+        desc_choice1: "en rajouter, on ne sait jamais",
+        desc_choice2: "les enlever, c'est dangereux pour les randonneurs",
+        choice1: {
+            hunter: noChange,
+            naturalist: noChange,
+            farmer: mediumChange,
+            researcher: mediumChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        choice2: {
+            hunter: mediumChange,
+            naturalist: mediumChange,
+            farmer: -minorChange,
+            researcher: -minorChange,
+            vole: noChange,
+            fox: noChange,
+            hare: noChange,
+            hay: noChange
+        },
+        used: false,
+        event: false
+    },
+    {
+        name: 59,
+        description: "Des campagnoles géant ont été aperçu dans la foret.",
+        desc_choice1: "convoquer les chasseurs",
+        desc_choice2: "c'est une création de la nature",
         choice1: {
             hunter: noChange,
             naturalist: noChange,
