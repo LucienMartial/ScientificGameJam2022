@@ -423,8 +423,9 @@ body.inGame {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 200px;
-    height: 75px;
+    width: 10%;
+    height: 10%;
+    font-size: 3rem;
     font-weight: bold;
     padding: 10px 10px 10px 10px;
     color: var(--title-color);
