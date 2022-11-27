@@ -168,7 +168,7 @@ function display_last_report() {
 }
 
 function play_round() {
-    if ((game.get_date() / 5) % 3 === 0 && game.get_date() !== 0) {
+    if ((game.get_date() / 5) % 5 === 0 && game.get_date() !== 0) {
         game.generate_report();
         display_last_report();
     }
@@ -235,12 +235,14 @@ function process_click_on_card(side) {
         cardContainer.classList.remove("clickedCenter");
         cardContainer.classList.add("startTransition");
 
-        if (!game.is_game_over([hunter, naturalist, farmer, researcher])) {
+        let gameOver = game.is_game_over([hunter, naturalist, farmer, researcher]);
+
+        if (!gameOver) {
             game.pick_new_card();
             update_game_display();
             play_round();
         } else {
-            end_game(game.is_game_over([hunter, naturalist, farmer, researcher]));
+            end_game(gameOver);
         }
         setTimeout(function () {
             document.documentElement.style.setProperty("--card-move-transition-duration", "0.3s");
@@ -253,13 +255,16 @@ function process_click_on_card(side) {
 function end_game(message) {
     game.generate_report();
     pop_up(message);
-    leave_game();
+    
+    setTimeout(function () {
+        leave_game();
+    }, 2000);
 }
 
 function pop_up(text) {
     gamePopup = document.getElementById("gamePopup");
 
-    gamePopup.innerHTML = text + "MODIF POPUP";
+    gamePopup.innerHTML = text;
     gamePopup.style.display = "block";
 
     gamePopup.onclick = function () {

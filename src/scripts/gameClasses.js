@@ -94,12 +94,12 @@ class Game {
             return "No more cards";
         }
         
-        if (this.date / 5 > 21) {
+        if (this.date / 5 > 24) {
             return balancedGameOver;
         }
 
         for (let i = 0; i < actors.length; i++) {
-            if (actors[i].get_gauge() < 5) {
+            if (actors[i].get_gauge() < 10) {
                 switch (actors[i].get_type()) {
                     case ACTOR_TYPE.HUNTER:
                         return hunterGameOver;
@@ -157,5 +157,9 @@ class Actor {
 
     get_gauge() {
         return this.gauge;
+    }
+
+    get_type() {
+        return this.type;
     }
 }
