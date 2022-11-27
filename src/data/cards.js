@@ -322,7 +322,7 @@ const cards =[
     },
     {
         name: 11,
-        description: "Un renard a mordu un homme. Le faire disparaître ?",
+        description: "Un renard a mordu un homme. S'occuper de son cas ?",
         desc_choice1: "Oui",
         desc_choice2: "Non",
         choice1: {
