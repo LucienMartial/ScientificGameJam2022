@@ -747,8 +747,8 @@ const cards =[
     {
         name: 23,
         description: "",
-        desc_choice1: "Vous continuez le projet comme tel, la transmission d'informations a été faite.",
-        desc_choice2: "Vous prenez le temps d'inviter le nouveau président à un groupe de travail.",
+        desc_choice1: "Vous continuez le projet comme tel, la transmission d'informations a été faite",
+        desc_choice2: "Vous prenez le temps d'inviter le nouveau président à un groupe de travail",
         choice1: {
             hunter: 0,
             naturalist: -1,
