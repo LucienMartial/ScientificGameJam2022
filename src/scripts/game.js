@@ -136,7 +136,7 @@ function display_date() {
     } else if (year === 0) {
         currentDate.innerHTML = "Mois " + month;
     } else {
-        currentDate.innerHTML = "Année " + year + " - Mois " + month;
+        currentDate.innerHTML = "Année " + year + "<br> Mois " + month;
     }
 }
 
@@ -159,7 +159,7 @@ function display_last_report(endGame, message) {
         } else if (repYear === 0) {
             date.innerText = "Mois " + repMonth;
         } else {
-            date.innerText = "Année " + repYear + " - Mois " + repMonth;
+            date.innerText = "Année " + repYear + "<br> Mois " + repMonth;
         }
         
         lastReportContent.appendChild(date);
@@ -185,9 +185,6 @@ function display_last_report(endGame, message) {
 
     lastReportContent.onclick = function () {
         lastReportContent.classList.remove("active");
-        if (endGame) {
-            end_game(message);
-        }
     }
 }
 
@@ -277,7 +274,7 @@ function process_click_on_card(side) {
 function end_game() {
     alert("Game over!");
     set_exclusive_div_visible(EXCL_DIVS.MENU);
-    display_last_report(endGame, message);
+    game.generate_report();
 }
 
 function pop_up(text) {

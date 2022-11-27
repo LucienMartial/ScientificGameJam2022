@@ -9,7 +9,6 @@
 }
 
 :root {
-    --dark-mode-transition-duration: .2s;
     --background-color: #333;
     --title-color: #AAA;
     --card-background-color: #333;
