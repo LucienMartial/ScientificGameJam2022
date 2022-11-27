@@ -196,7 +196,8 @@ body.inGame{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1%;
+    display:inline-block;
+    gap: 2px;
 }
 
 #currentDate {

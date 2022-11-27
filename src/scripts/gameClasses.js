@@ -16,7 +16,7 @@ const ENVIRONMENT = {
 
 class Game {
     constructor(cards) {
-        this.date = 0;
+        this.date = -5;
 
         this.environment = {};
         this.environment[ENVIRONMENT.VOLE] = 100;
@@ -94,12 +94,12 @@ class Game {
             return "No more cards";
         }
         
-        if (this.date / 5 >= 24) {
+        if (this.date / 5 > 20) {
             return "Game over";
         }
 
         for (let i = 0; i < actors.length; i++) {
-            if (actors[i].get_gauge() < 50) {
+            if (actors[i].get_gauge() < 5) {
                 return "Les " + actors[i].type + "s ont quitté la table";
             }
         }

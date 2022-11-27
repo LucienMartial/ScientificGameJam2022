@@ -19,6 +19,8 @@ let lastReportBtn = null;
 let leaveGameBtn = null;
 let lastReportContent = null;
 
+let is_game_started = false;
+
 function reset_game() {
     for (let i = 0; i < cards.length; i++) {
         cards[i].used = false;
@@ -26,6 +28,8 @@ function reset_game() {
 }
 
 function start_game() {
+    is_game_started = true;
+
     // récupérer image de h1
     document.body.classList.add("inGame");
     reset_game();
@@ -55,6 +59,7 @@ function init_classes() {
 /** DISPLAY UPDATE **/
 
 function update_game_display() {
+    display_options();
     display_actors();
     display_card();
     display_date();
@@ -98,6 +103,14 @@ function init_display_elements() {
     }
 }
 
+function display_options() {
+    if (is_game_started == true) {
+        optionsDiv.style.display = "inline-block";
+    } else {
+        optionsDiv.style.display = "none";
+    }
+}
+
 function display_actors() {
     hunterDiv.style.height = hunter.get_gauge() + "%";
     naturalistDiv.style.height = naturalist.get_gauge() + "%";
@@ -116,13 +129,7 @@ function display_date() {
     let month = currDate % 12;
     let year = Math.floor(currDate / 12);
 
-    if (month === 0) {
-        currentDate.innerHTML = "Année " + year;
-    } else if (year === 0) {
-        currentDate.innerHTML = "Mois " + month;
-    } else {
-        currentDate.innerHTML = "Année " + year + " - Mois " + month;
-    }
+    currentDate.innerHTML = "Année " + (year + 1) + "<br> Mois " + (month + 1);
 }
 
 
@@ -139,13 +146,7 @@ function display_last_report(endGame, message) {
         let repMonth = report.date % 12;
         let repYear = Math.floor(report.date / 12);
 
-        if (repMonth === 0) {
-            date.innerText = "Année " + repYear;
-        } else if (repYear === 0) {
-            date.innerText = "Mois " + repMonth;
-        } else {
-            date.innerText = "Année " + repYear + " - Mois " + repMonth;
-        }
+        date.innerText = "Année " + (repYear + 1) + "<br> Mois " + (repMonth + 1);
         
         lastReportContent.appendChild(date);
 
@@ -170,9 +171,6 @@ function display_last_report(endGame, message) {
 
     lastReportContent.onclick = function () {
         lastReportContent.classList.remove("active");
-        if (endGame) {
-            end_game(message);
-        }
     }
 }
 
@@ -259,10 +257,10 @@ function process_click_on_card(side) {
     }, 300);
 }
 
-function end_game(message) {
-    alert(message + " ! %TEST%%TEST%");
+function end_game() {
+    alert("Game over!");
     set_exclusive_div_visible(EXCL_DIVS.MENU);
-    display_last_report(endGame, message);
+    game.generate_report();
 }
 
 function pop_up(text) {
