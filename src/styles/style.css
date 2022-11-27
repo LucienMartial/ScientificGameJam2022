@@ -154,10 +154,10 @@ h1, h2 {
 
 body{
     background-image: url("../assets/background_meadow_adobe_express.svg");
-    background-size: 100%;
     background-blend-mode: multiply;
     background-repeat : no-repeat;
-    background-position-x: 50%;
+    background-size: 105%;
+    background-position-x: 40%;
     background-position-y: 20%;
 }
 body.dark .card {
@@ -265,6 +265,7 @@ body.dark #options button {
 .actor.researcher {
     grid-area: researcher;
 }
+
 
 .progressbar {
     position: relative;

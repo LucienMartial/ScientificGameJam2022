@@ -26,7 +26,8 @@ function reset_game() {
 
 function start_game() {
     // récupérer image de h1
-    document.getElementsByTagName("body").item(0).style.backgroundImage = "url('assets/images/background_type2D_2.png')";
+    var body = document.body;
+    body.style.backgroundImage = "url('assets/image_background_2.png')";
     reset_game();
     const gameContext = document.getElementById("gameContext");
     gameContext.style.display = "block";
