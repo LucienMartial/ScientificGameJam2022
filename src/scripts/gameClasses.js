@@ -19,10 +19,10 @@ class Game {
         this.date = 0;
 
         this.environment = {};
-        this.environment[ENVIRONMENT.VOLE] = 50;
-        this.environment[ENVIRONMENT.FOX] = 50;
-        this.environment[ENVIRONMENT.HARE] = 50;
-        this.environment[ENVIRONMENT.HAY] = 50;
+        this.environment[ENVIRONMENT.VOLE] = 100;
+        this.environment[ENVIRONMENT.FOX] = 100;
+        this.environment[ENVIRONMENT.HARE] = 100;
+        this.environment[ENVIRONMENT.HAY] = 100;
 
         this.cards = cards;
         this.pickedCard = null;
@@ -43,7 +43,7 @@ class Game {
 
         this.pickedCard = this.cards[randomIndex];
         this.cards[randomIndex].used = true;
-        this.date++;
+        this.date += 5;
     }
 
     unused_cards() {
@@ -56,15 +56,55 @@ class Game {
     }
 
     update_environment(vole, fox, hare, hay) {
-        this.environment[ENVIRONMENT.VOLE] += vole;
-        this.environment[ENVIRONMENT.FOX] += fox;
-        this.environment[ENVIRONMENT.HARE] += hare;
-        this.environment[ENVIRONMENT.HAY] += hay;
-        console.log(this.environment);
+        if (this.environment[ENVIRONMENT.VOLE] + vole < 0) {
+            this.environment[ENVIRONMENT.VOLE] = 0;
+        } else if (this.environment[ENVIRONMENT.VOLE] + vole > 100) {
+            this.environment[ENVIRONMENT.VOLE] = 100;
+        } else {
+            this.environment[ENVIRONMENT.VOLE] += vole;
+        }
+
+        if (this.environment[ENVIRONMENT.FOX] + fox < 0) {
+            this.environment[ENVIRONMENT.FOX] = 0;
+        } else if (this.environment[ENVIRONMENT.FOX] + fox > 100) {
+            this.environment[ENVIRONMENT.FOX] = 100;
+        } else {
+            this.environment[ENVIRONMENT.FOX] += fox;
+        }
+
+        if (this.environment[ENVIRONMENT.HARE] + hare < 0) {
+            this.environment[ENVIRONMENT.HARE] = 0;
+        } else if (this.environment[ENVIRONMENT.HARE] + hare > 100) {
+            this.environment[ENVIRONMENT.HARE] = 100;
+        } else {
+            this.environment[ENVIRONMENT.HARE] += hare;
+        }
+
+        if (this.environment[ENVIRONMENT.HAY] + hay < 0) {
+            this.environment[ENVIRONMENT.HAY] = 0;
+        } else if (this.environment[ENVIRONMENT.HAY] + hay > 100) {
+            this.environment[ENVIRONMENT.HAY] = 100;
+        } else {
+            this.environment[ENVIRONMENT.HAY] += hay;
+        }
     }
 
-    is_game_over() {
-        return !this.unused_cards() || this.gauge <= 0 || this.gauge >= 100 || this.date >= 30;
+    is_game_over(actors) {
+        if (!this.unused_cards()) {
+            return "No more cards";
+        }
+        
+        if (this.date / 5 >= 24) {
+            return "Game over";
+        }
+
+        for (let i = 0; i < actors.length; i++) {
+            if (actors[i].get_gauge() < 50) {
+                return "Les " + actors[i].type + "s ont quitté la table";
+            }
+        }
+
+        return false;
     }
 
     generate_report() {
@@ -97,7 +137,13 @@ class Actor {
     }
 
     update_gauge(value) {
-        this.gauge += value;
+        if (this.gauge + value > 100) {
+            this.gauge = 100;
+        } else if (this.gauge + value < 0) {
+            this.gauge = 0;
+        } else {
+            this.gauge += value;
+        }
     }
 
     get_gauge() {

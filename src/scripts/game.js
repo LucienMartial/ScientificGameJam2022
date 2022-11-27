@@ -16,6 +16,7 @@ let cardContainer = null;
 let optionsDiv = null;
 let currentDate = null;
 let lastReportBtn = null;
+let leaveGameBtn = null;
 let lastReportContent = null;
 
 let is_game_started = false;
@@ -35,10 +36,6 @@ function start_game() {
     reset_game();
     const gameContext = document.getElementById("gameContext");
     gameContext.style.display = "block";
-
-    // gameContext.onclick = function () {
-    //     gameContext.style.display = "none";
-    // }
 
     gameContext.onclick = function () {
         gameContext.style.display = "none";
@@ -77,15 +74,34 @@ function init_display_elements() {
 
     cardContainer = document.getElementById("cardContainer");
 
-    optionsDiv = document.getElementById("options");
-    currentDate = document.getElementById("currentDate");
-    lastReportBtn = document.getElementById("lastReport");
+    optionsDiv = document.createElement("div");
+    optionsDiv.id = "options";
+    currentDate = document.createElement("p");
+    currentDate.id = "currentDate";
+    optionsDiv.appendChild(currentDate);
+    lastReportBtn = document.createElement("button");
+    lastReportBtn.id = "lastReport";
+    lastReportBtn.innerText = "Dernier rapport";
+    optionsDiv.appendChild(lastReportBtn);
+    leaveGameBtn = document.createElement("button");
+    leaveGameBtn.id = "leaveGame";
+    leaveGameBtn.innerText = "Quitter partie";
+    optionsDiv.appendChild(leaveGameBtn);
     lastReportContent = document.getElementById("lastReportContent");
+
+    document.getElementsByTagName("header")[0].appendChild(optionsDiv);
 
     lastReportBtn.onclick = function () {
         document.documentElement.style.setProperty("--report-display-transition-duration", "0.3s");
         lastReportContent.classList.toggle("active");
-        display_last_report();
+        display_last_report(false, "");
+    }
+
+    leaveGameBtn.onclick = function () {
+        document.body.style.backgroundImage = "url('assets/background_meadow_adobe_express.svg')";
+        document.body.style.backgroundSize = "100%";
+        optionsDiv.remove();
+        set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
 }
 
@@ -111,11 +127,21 @@ function display_card() {
 }
 
 function display_date() {
-    currentDate.innerHTML = "Date: " + game.get_date();
+    let currDate = game.get_date();
+    let month = currDate % 12;
+    let year = Math.floor(currDate / 12);
+
+    if (month === 0) {
+        currentDate.innerHTML = "Année " + year;
+    } else if (year === 0) {
+        currentDate.innerHTML = "Mois " + month;
+    } else {
+        currentDate.innerHTML = "Année " + year + " - Mois " + month;
+    }
 }
 
 
-function display_last_report() {
+function display_last_report(endGame, message) {
     const report = game.get_last_report();
     if (report === null) {
         lastReportContent.innerHTML = "Aucun rapport n'a encore été effectué.";
@@ -124,7 +150,18 @@ function display_last_report() {
         lastReportContent.innerHTML = "";
         const date = document.createElement("p");
         date.classList.add("reportDate");
-        date.innerText = "Date: " + report.date;
+
+        let repMonth = report.date % 12;
+        let repYear = Math.floor(report.date / 12);
+
+        if (repMonth === 0) {
+            date.innerText = "Année " + repYear;
+        } else if (repYear === 0) {
+            date.innerText = "Mois " + repMonth;
+        } else {
+            date.innerText = "Année " + repYear + " - Mois " + repMonth;
+        }
+        
         lastReportContent.appendChild(date);
 
         lastReportContent.appendChild(document.createElement("br"));
@@ -148,12 +185,15 @@ function display_last_report() {
 
     lastReportContent.onclick = function () {
         lastReportContent.classList.remove("active");
+        if (endGame) {
+            end_game(message);
+        }
     }
 }
 
 function play_round() {
-    if (game.get_date() % 10 === 0 && game.get_date() !== 0) {
-        alert("New report");
+    if ((game.get_date() / 5) % 3 === 0 && game.get_date() !== 0) {
+        pop_up("Un nouveau rapport est disponible !");
         game.generate_report();
     }
 
@@ -218,12 +258,13 @@ function process_click_on_card(side) {
         cardContainer.classList.remove("clickedRight");
         cardContainer.classList.remove("clickedCenter");
         cardContainer.classList.add("startTransition");
-        if (!game.is_game_over()) {
+
+        if (!game.is_game_over([hunter, naturalist, farmer, researcher])) {
             game.pick_new_card();
             update_game_display();
             play_round();
         } else {
-            end_game();
+            end_game(game.is_game_over([hunter, naturalist, farmer, researcher]));
         }
         setTimeout(function () {
             document.documentElement.style.setProperty("--card-move-transition-duration", "0.3s");
@@ -234,6 +275,19 @@ function process_click_on_card(side) {
 }
 
 function end_game() {
-    is_game_started = false;
     alert("Game over!");
+    set_exclusive_div_visible(EXCL_DIVS.MENU);
+    display_last_report(endGame, message);
+}
+
+function pop_up(text) {
+    let popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS %TEST%";
+
+    popup.onclick = function () {
+        popup.remove();
+    }
+
+    document.body.appendChild(popup);
 }
