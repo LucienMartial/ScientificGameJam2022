@@ -10,8 +10,8 @@
 
 :root {
     --dark-mode-transition-duration: .2s;
-    --background-color: #D7F0F5;
-    --title-color: #333;
+    --background-color: #333;
+    --title-color: #AAA;
     --card-background-color: #333;
     --text-color: #AAA;
     --card-title-background-color: #666;
@@ -25,47 +25,29 @@
     --report-background-color: #ffc89b;
 }
 
-body.dark {
-    --background-color: #333;
-    --title-color: #AAA;
-}
-
 body {
-    transition: background-color var(--dark-mode-transition-duration);
     background-color: var(--background-color);
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    height: 100vh;
 }
 
 header {
     height: 10vh;
-    border-bottom: solid #000 1px;
+    padding: 0 1%;
     display: flex;
     flex-direction: row;
-}
-
-header ul {
-    margin: auto;
-    display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    width: 97%;
-    list-style: none;
 }
 
-header li {
-    list-style: none;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
-    height: 80%;
-    max-width: 10%;
-    cursor: pointer;
+header h1{
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
 }
 
-header li img {
+header img{
     height: 100%;
 }
 
@@ -74,32 +56,30 @@ header li img {
     width: 100px;
 }
 
-h1, h2 {
-    text-align: center;
+h1 {
     color: var(--title-color);
-    transition: color var(--dark-mode-transition-duration);
 }
 
-#toggleDark {
-    background-image: url("../assets/sun-solid.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+#game{
+    height: 90vh;
 }
 
 .gameContainer {
+    height: 100%;
     display: grid;
     grid-template-areas:
         "hunter card card naturalist"
         "farmer card card researcher";
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2,1fr);
     justify-items: center;
     grid-row-gap: 10px;
+    padding-top: 1%;
 }
 
 #cardContainer {
     display: flex;
-    height: 60vh;
+    height: 75%;
     width: 100%;
     margin-top: 20px;
     justify-content: center;
@@ -139,6 +119,7 @@ h1, h2 {
     width: 75%;
     height: 100%;
     user-select: none;
+    box-shadow: 0 0 50px #FFFA;
 }
 
 .card.event{
@@ -150,8 +131,6 @@ h1, h2 {
         "next";
 }
 
-
-
 body{
     background-image: url("../assets/background_meadow_adobe_express.svg");
     background-blend-mode: multiply;
@@ -160,9 +139,7 @@ body{
     background-position-x: 40%;
     background-position-y: 20%;
 }
-body.dark .card {
-    box-shadow: 0 0 50px #FFFA;
-}
+
 
 .card:hover {
     scale: 105%;
@@ -183,7 +160,7 @@ body.dark .card {
     color: var(--text-color);
     border-top: solid var(--border-color) 1px;
     cursor: pointer;
-    padding-top: 10px;
+    padding: 10px;
 }
 
 #choiceLeft {
@@ -211,14 +188,12 @@ body.dark .card {
 }
 
 #options {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 1%;
 }
 
 #currentDate {
@@ -236,7 +211,11 @@ body.dark .card {
     background-color: var(--card-background-color);
     color: var(--text-color);
     border-radius: 5%;
-    border: none;
+    border: solid var(--border-color) 1px;
+}
+
+#options #currentDate{
+    text-align: center;
 }
 
 #gameContext {
@@ -252,9 +231,6 @@ body.dark .card {
     padding: 5%;
 }
 
-body.dark #options button {
-    border: solid #666666 1px;
-}
 
 .actor.hunter {
     grid-area: hunter;
@@ -369,7 +345,6 @@ h1{
     cursor: pointer;
     outline: none;
     background-color: var(--card-background-color);
-    color: var(--text-color);
     border-radius: 5%;
     border: solid var(--border-color) 1px;
 

@@ -21,30 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
         start_game();
         set_exclusive_div_visible(EXCL_DIVS.GAME);
     }
-
-
-    /** MENU **/
-
-    const menuButton = document.getElementById("leaveGame");
-
-    menuButton.onclick = function () {
-        // récupérer body
-        var body =  document.getElementsByTagName("body");
-        body.item(0).style.backgroundImage = "url('assets/background_meadow_adobe_express.svg')";
-        body.item(0).style.backgroundSize = "105%";
-        set_exclusive_div_visible(EXCL_DIVS.MENU);
-    }
-
-    /** DARK MODE **/
-    const darkModeButton = document.getElementById("toggleDark");
-    const sunIcon = "assets/sun-solid.svg";
-    const moonIcon = "assets/moon-solid.svg";
-    let darkMode = false;
-    darkModeButton.onclick = function () {
-        darkModeButton.style.backgroundImage = darkMode ? `url("${sunIcon}")` : `url("${moonIcon}")`;
-        darkMode = !darkMode;
-        document.body.classList.toggle("dark");
-    }
 });
 
 function set_exclusive_div_visible(divToSet) {

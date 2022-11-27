@@ -16,6 +16,7 @@ let cardContainer = null;
 let optionsDiv = null;
 let currentDate = null;
 let lastReportBtn = null;
+let leaveGameBtn = null;
 let lastReportContent = null;
 
 function reset_game() {
@@ -72,15 +73,33 @@ function init_display_elements() {
 
     cardContainer = document.getElementById("cardContainer");
 
-    optionsDiv = document.getElementById("options");
-    currentDate = document.getElementById("currentDate");
-    lastReportBtn = document.getElementById("lastReport");
+    optionsDiv = document.createElement("div");
+    optionsDiv.id = "options";
+    currentDate = document.createElement("p");
+    currentDate.id = "currentDate";
+    optionsDiv.appendChild(currentDate);
+    lastReportBtn = document.createElement("button");
+    lastReportBtn.id = "lastReport";
+    lastReportBtn.innerText = "Dernier rapport";
+    optionsDiv.appendChild(lastReportBtn);
+    leaveGameBtn = document.createElement("button");
+    leaveGameBtn.id = "leaveGame";
+    leaveGameBtn.innerText = "Quitter partie";
+    optionsDiv.appendChild(leaveGameBtn);
     lastReportContent = document.getElementById("lastReportContent");
+
+    document.getElementsByTagName("header")[0].appendChild(optionsDiv);
 
     lastReportBtn.onclick = function () {
         document.documentElement.style.setProperty("--report-display-transition-duration", "0.3s");
         lastReportContent.classList.toggle("active");
         display_last_report();
+    }
+
+    leaveGameBtn.onclick = function () {
+        document.body.style.backgroundImage = "url('assets/background_meadow_adobe_express.svg')";
+        document.body.style.backgroundSize = "100%";
+        set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
 }
 
