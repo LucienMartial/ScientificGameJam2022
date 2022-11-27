@@ -36,7 +36,7 @@ function start_game() {
     document.body.classList.add("inGame");
     reset_game();
 
-    pop_up(introText);
+    pop_up(introText,false);
 
     init_classes();
     init_display_elements();
@@ -255,16 +255,19 @@ function process_click_on_card(side) {
 function end_game(message) {
     game.generate_report();
     pop_up(message);
-    
-    setTimeout(function () {
-        leave_game();
-    }, 2000);
+    leave_game();
 }
 
-function pop_up(text) {
+function pop_up(text, gameover) {
     gamePopup = document.getElementById("gamePopup");
-
-    gamePopup.innerHTML = text;
+    if(gameover) {
+        const title = document.createElement("h2");
+        title.innerText = "PERDU !";
+        gamePopup.appendChild(title);
+    }
+    const message = document.createElement("p");
+    message.innerHTML = text;
+    gamePopup.appendChild(message);
     gamePopup.style.display = "block";
 
     gamePopup.onclick = function () {
