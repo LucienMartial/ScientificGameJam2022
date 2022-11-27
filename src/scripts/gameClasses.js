@@ -94,7 +94,7 @@ class Game {
             return "No more cards";
         }
         
-        if (this.date / 5 > 24) {
+        if (this.date / 5 > 20) {
             return "Game over";
         }
 

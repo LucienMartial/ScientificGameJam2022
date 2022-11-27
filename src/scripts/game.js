@@ -131,13 +131,7 @@ function display_date() {
     let month = currDate % 12;
     let year = Math.floor(currDate / 12);
 
-    if (month === 0) {
-        currentDate.innerHTML = "Année " + year;
-    } else if (year === 0) {
-        currentDate.innerHTML = "Mois " + month;
-    } else {
-        currentDate.innerHTML = "Année " + year + "<br> Mois " + month;
-    }
+    currentDate.innerHTML = "Année " + (year + 1) + "<br> Mois " + (month + 1);
 }
 
 
@@ -154,13 +148,7 @@ function display_last_report(endGame, message) {
         let repMonth = report.date % 12;
         let repYear = Math.floor(report.date / 12);
 
-        if (repMonth === 0) {
-            date.innerText = "Année " + repYear;
-        } else if (repYear === 0) {
-            date.innerText = "Mois " + repMonth;
-        } else {
-            date.innerText = "Année " + repYear + "<br> Mois " + repMonth;
-        }
+        date.innerText = "Année " + (repYear + 1) + "<br> Mois " + (repMonth + 1);
         
         lastReportContent.appendChild(date);
 
