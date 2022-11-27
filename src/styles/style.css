@@ -153,12 +153,12 @@ h1, h2 {
 
 
 body{
-    background-image: url("../assets/background_meadow.png");
-    background-size: 70%;
+    background-image: url("../assets/background_meadow_adobe_express.svg");
+    background-size: 100%;
     background-blend-mode: multiply;
     background-repeat : no-repeat;
     background-position-x: 50%;
-    background-position-y: 0%;
+    background-position-y: 20%;
 }
 body.dark .card {
     box-shadow: 0 0 50px #FFFA;
