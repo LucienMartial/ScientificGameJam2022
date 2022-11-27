@@ -257,8 +257,8 @@ function process_click_on_card(side) {
     }, 300);
 }
 
-function end_game() {
-    alert("Game over!");
+function end_game(message) {
+    alert(message + " !");
     set_exclusive_div_visible(EXCL_DIVS.MENU);
     game.generate_report();
 }
