@@ -273,7 +273,14 @@ function pop_up(text, gameover) {
     gamePopup.onclick = function () {
         gamePopup.innerHTML = "";
         gamePopup.style.display = "none";
+        document.getElementById("game").style.filter = "blur(0px)";
+        document.getElementById("menu").style.filter = "blur(0px)";
+        document.getElementsByTagName("header")[0].style.filter = "blur(0px)";
+
     }
+    document.getElementById("game").style.filter = "blur(5px)";
+    document.getElementById("menu").style.filter = "blur(5px)";
+    document.getElementsByTagName("header")[0].style.filter = "blur(5px)";
 }
 
 function leave_game() {
