@@ -424,19 +424,25 @@ body.inGame {
     transform: translate(-50%, -50%);
     text-align: center;
     /*width: 10%;*/
-    height: 10%;
+    height: 5rem;
     font-size: 3rem;
     font-weight: bold;
-    padding: 10px 10px 10px 10px;
     color: var(--title-color);
     cursor: pointer;
     outline: none;
     background-color: var(--card-background-color);
     border-radius: 5%;
     border: solid var(--border-color) 1px;
-
+}
+.start-btn span{
+    padding: 10px;
+    height: 100%;
 }
 
 #menu {
     height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
 }
