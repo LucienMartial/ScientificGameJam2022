@@ -282,7 +282,8 @@ body.inGame {
     z-index: 10;
     background-color: var(--card-background-color);
     font-size: larger;
-    padding: 5%;
+    padding: 2% 5%;
+    text-align: justify;
     border-radius: 3%;
     color: var(--text-color);
     border: solid var(--border-color) 2px;

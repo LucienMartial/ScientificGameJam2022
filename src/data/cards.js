@@ -1785,6 +1785,6 @@ const cards =[
         },
         used: false,
         event: false,
-        img: "hare"
+        img: "vole"
     }
 ]
