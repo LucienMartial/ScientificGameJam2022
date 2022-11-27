@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.getElementById("leaveGame");
 
     menuButton.onclick = function () {
+        // récupérer body
+        var body =  document.getElementsByTagName("body");
+        body.item(0).style.backgroundImage = "url('assets/background_meadow_adobe_express.svg')";
+        body.item(0).style.backgroundSize = "100%";
         set_exclusive_div_visible(EXCL_DIVS.MENU);
     }
 
