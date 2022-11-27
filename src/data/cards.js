@@ -1611,7 +1611,7 @@ const cards =[
         },
         used: false,
         event: false
-    }
+    },
     {
         name: 55,
         description: "Les chasseurs shouaite organiser des atelier d'introduction à la taxidermie dans les écoles.",
