@@ -688,7 +688,7 @@ const cards =[
         used: false,
         event: false
     },
-    /*{
+    {
         name: 25,
         description: "Le nouveau président de la commission des agriculteurs est élu, il ne connait pas Careli.",
         desc_choice1: "Vous continuez le projet comme tel, la transimission d'informations a été faite",
@@ -715,8 +715,8 @@ const cards =[
         },
         used: false,
         event: false
-    },*/
-    /*{
+    },
+    {
         name: 26,
         description: "Un agriculteur du zonage Careli à des renards qui se sont installés dans son bâtiment agricole et l’on détériorer, il demande une dérogation pour les piégers.",
         desc_choice1: "Careli lui accorde la dérogation",
@@ -743,8 +743,8 @@ const cards =[
         },
         used: false,
         event: false
-    },*/
-    /*{
+    },
+    {
         name: 27,
         description: "Un agriculteur demande à être reçu par le groupe, il est fermement opposé au tire sur le renard sur ces parcelles.",
         desc_choice1: "Careli accepte de le recevoir",
@@ -1239,7 +1239,7 @@ const cards =[
             hunter: minorChange,
             naturalist: minorChange,
             farmer: minorChange,
-            researcher: minorChange
+            researcher: minorChange,
             vole: noChange,
             fox: noChange,
             hare: noChange,
@@ -1583,7 +1583,7 @@ const cards =[
         },
         used: false,
         event: false
-    }*/
+    },
     {
         name: 54,
         description: "Des fermiers on apercu des campagnoles allumant des feux dans la foret.",
