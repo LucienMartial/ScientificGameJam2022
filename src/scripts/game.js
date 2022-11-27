@@ -264,13 +264,15 @@ function end_game(message) {
 }
 
 function pop_up(text) {
-    let popup = document.createElement("div");
-    popup.classList.add("popup");
-    popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS %TEST%";
+    alert(text + "MODIF POPUP");
+    
+    // let popup = document.createElement("div");
+    // popup.classList.add("popup");
+    // popup.innerText = text + " %TEST% MODIFIER LE STYLE DES POPUPS %TEST%";
 
-    popup.onclick = function () {
-        popup.remove();
-    }
+    // popup.onclick = function () {
+    //     popup.remove();
+    // }
 
-    document.body.appendChild(popup);
+    // document.body.appendChild(popup);
 }
