@@ -395,7 +395,7 @@ body.inGame {
     border-radius: 2%;
     padding: 1%;
     background-color: var(--report-background-color);
-    overflow: scroll;
+    overflow: auto;
     color: #1d232d;
 }
 
